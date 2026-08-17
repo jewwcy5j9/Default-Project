@@ -1,0 +1,77 @@
+{
+  "protocol_version": "3.0.0",
+  "status": "FROZEN BEFORE EXTERNAL MUTANT-POPULATION ACCESS",
+  "freeze_date": "2026-08-10",
+  "supersedes_for_future_execution": "v2.0 dual-endpoint protocol; v2 files and archives remain immutable historical records",
+  "amendment_reason": "Replace the system-specific LLR primary and zero-shot FoldX co-primary with one system-agnostic, label-blinded ESM-2 residue-difference primary; raise the main-panel gate to a new K=3 panel with n>=8; add support, collision, resolution, pooling, and nested-selection diagnostics.",
+  "primary_endpoint": {
+    "checkpoint": "facebook/esm2_t33_650M_UR50D",
+    "feature": "mutant-minus-WT residue embedding difference",
+    "multi_site_aggregation": "sum embedding-delta vectors at every substituted residue",
+    "site_markers": false,
+    "cross_system_position_mapping": false,
+    "pca": {
+      "fit_scope": "outer-training mutant residue-delta rows only",
+      "n_components": "min(20, n_train-1)",
+      "solver": "full"
+    },
+    "model": {
+      "class": "LowRankCDST",
+      "K": 3,
+      "rank": 2,
+      "hidden_dim": 32,
+      "epochs": 800,
+      "loss": "probability-space MSE",
+      "optimizer": "Adam",
+      "learning_rate": 0.005,
+      "weight_decay": 0.0001,
+      "n_seeds": 5,
+      "seed_scheme": "s*100+outer_test_index",
+      "execution_device": "CPU",
+      "seed_average": "arithmetic mean followed by simplex normalization"
+    },
+    "comparator": "LOO outer-training arithmetic mean population on identical folds",
+    "fold_metric": "mean absolute error across the three states"
+  },
+  "success_gate": {
+    "mean_paired_improvement": ">0",
+    "relative_mae_improvement": ">=0.15",
+    "one_sided_exact_test": "exact binomial sign test, p<=0.05",
+    "catastrophic_fold": "none with primary MAE > 2 * training-mean MAE",
+    "drop_one_sensitivity": "mean paired improvement remains >0 after deleting each mutation in turn",
+    "joint_rule": "all five conditions must pass"
+  },
+  "secondary_endpoints": [
+    "state-specific FoldX zero-shot physical control when frozen state structures are available",
+    "LLR-only when a pre-reveal system-agnostic LLR package is available",
+    "CLR-Ridge on fixed outer-fold PCA features",
+    "CLR-GP on fixed outer-fold PCA features",
+    "constant-WT",
+    "fully nested selector among frozen fast secondary candidates"
+  ],
+  "diagnostic_endpoints": [
+    "nearest-neighbor support distance versus held-out primary MAE: Spearman direction and exhaustive exact label permutation for n<=9; deterministic 100000-permutation sensitivity for larger n, never a success gate",
+    "exact feature collisions, target conflicts, conflict-member error enrichment, and label-permutation status",
+    "coarse and fine K=3 ILR contrast MAE",
+    "full K=3 versus separately trained pooled K=2 shared-contrast MAE",
+    "fixed primary versus fully nested selector gap",
+    "single-mutant-only sensitivity when multi-site mutants are present"
+  ],
+  "eligibility": {
+    "main": "entirely new system; K=3; n>=8 evaluable mutants; one construct, ligand, temperature, buffer, and state model; quantitative WT and mutant populations; state mapping frozen before execution",
+    "supporting_only": "K=3 n=5-7 or any K=2 panel",
+    "multi_site_mutants": "allowed under frozen sum aggregation; single-mutant-only sensitivity mandatory"
+  },
+  "blinding": {
+    "modeler_visible_before_reveal": [
+      "sequence", "mutation IDs and explicit sequence indices", "WT population",
+      "experimental conditions", "state definitions", "non-directional uncertainty metadata"
+    ],
+    "custodian_private": ["mutant populations", "population rank order", "qualitative result hints"],
+    "reveal_count": 1,
+    "post_reveal_prohibitions": [
+      "model tuning", "threshold changes", "mutation deletion", "secondary-endpoint promotion",
+      "replacement of a failed primary prediction"
+    ]
+  }
+}

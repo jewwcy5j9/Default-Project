@@ -1,0 +1,163 @@
+{
+  "spec_source": "NEXT_PHASE_EXECUTION_PLAN.md 阶段C C3",
+  "cells_total": 24,
+  "cells_ok": 24,
+  "failures": [],
+  "final_5of5_success": true,
+  "n_runs_per_cell_min_5": true,
+  "spearman_foldx_vs_exp_ddg_abs": {
+    "rho": null,
+    "p": null,
+    "n": 0,
+    "note": "N/A: no experimental ddG for the 8 Src core mutants (Cui 2025 reports state populations only)"
+  },
+  "spearman_threshold": 0.7,
+  "state_energy_ordering_consistency": 0.3125,
+  "ordering_threshold": 0.8,
+  "repeat_perturbation_mae": 0.23961533333333304,
+  "repeat_mae_threshold": 0.03,
+  "per_mutation": {
+    "L410A": {
+      "states": {
+        "active": {
+          "mean_ddg": 1.7223,
+          "std_ddg": 0.2195
+        },
+        "e1": {
+          "mean_ddg": 2.8716,
+          "std_ddg": 0.0355
+        },
+        "e2": {
+          "mean_ddg": 2.6633,
+          "std_ddg": 0.0093
+        }
+      },
+      "max_std": 0.2195238447185167
+    },
+    "V332I": {
+      "states": {
+        "active": {
+          "mean_ddg": 0.1246,
+          "std_ddg": 0.0302
+        },
+        "e1": {
+          "mean_ddg": -0.7857,
+          "std_ddg": 0.0047
+        },
+        "e2": {
+          "mean_ddg": -0.9772,
+          "std_ddg": 0.1574
+        }
+      },
+      "max_std": 0.15741032240612343
+    },
+    "L270F_V332I": {
+      "states": {
+        "active": {
+          "mean_ddg": 8.6363,
+          "std_ddg": 2.4541
+        },
+        "e1": {
+          "mean_ddg": 7.8386,
+          "std_ddg": 1.4245
+        },
+        "e2": {
+          "mean_ddg": 5.0924,
+          "std_ddg": 1.7721
+        }
+      },
+      "max_std": 2.4540521611408335
+    },
+    "L325A": {
+      "states": {
+        "active": {
+          "mean_ddg": 4.3188,
+          "std_ddg": 0.0203
+        },
+        "e1": {
+          "mean_ddg": 4.053,
+          "std_ddg": 0.0638
+        },
+        "e2": {
+          "mean_ddg": 3.9903,
+          "std_ddg": 0.0182
+        }
+      },
+      "max_std": 0.06375762228941717
+    },
+    "A311I": {
+      "states": {
+        "active": {
+          "mean_ddg": -0.3172,
+          "std_ddg": 0.0001
+        },
+        "e1": {
+          "mean_ddg": -0.2746,
+          "std_ddg": 0.1051
+        },
+        "e2": {
+          "mean_ddg": -0.3393,
+          "std_ddg": 0.0131
+        }
+      },
+      "max_std": 0.1051235159229381
+    },
+    "V380A": {
+      "states": {
+        "active": {
+          "mean_ddg": 2.396,
+          "std_ddg": 0.0006
+        },
+        "e1": {
+          "mean_ddg": 2.0824,
+          "std_ddg": 0.0312
+        },
+        "e2": {
+          "mean_ddg": 2.3366,
+          "std_ddg": 0.0242
+        }
+      },
+      "max_std": 0.03121477855119203
+    },
+    "V331A": {
+      "states": {
+        "active": {
+          "mean_ddg": 1.4256,
+          "std_ddg": 0.0041
+        },
+        "e1": {
+          "mean_ddg": 2.3822,
+          "std_ddg": 0.0275
+        },
+        "e2": {
+          "mean_ddg": 3.0492,
+          "std_ddg": 0.0101
+        }
+      },
+      "max_std": 0.02746648867256292
+    },
+    "F405A": {
+      "states": {
+        "active": {
+          "mean_ddg": 4.4296,
+          "std_ddg": 0.0278
+        },
+        "e1": {
+          "mean_ddg": 4.2865,
+          "std_ddg": 0.0245
+        },
+        "e2": {
+          "mean_ddg": 2.5418,
+          "std_ddg": null
+        }
+      },
+      "max_std": 0.027795711899498317
+    }
+  },
+  "verdicts": {
+    "spearman": "N/A",
+    "ordering": "FAIL",
+    "repeat_mae": "FAIL",
+    "coverage": "PASS"
+  }
+}

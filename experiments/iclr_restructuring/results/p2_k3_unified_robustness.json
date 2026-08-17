@@ -1,0 +1,184 @@
+{
+  "schema_version": "p2_k3_unified_robustness_v1",
+  "purpose": "place two frozen K=3 evaluation routes in one robustness artifact without pooling or comparing their scores as if they were one estimator",
+  "protocol": {
+    "biological_unit": "held-out mutation",
+    "descriptive_deletion_refits_model": false,
+    "leave_site_out_refits_confirmatory_route": true,
+    "routes_must_remain_separate": true
+  },
+  "source_hashes": {
+    "p2_k3_paired_exact_sha256": "ff732000ae2578f96954c87363ea9b495e4be609185f335db918d8b67cfc55e0",
+    "p2_k3_nested_results_sha256": "7527f27bb5e220f4a6b338bc599082a5682137e6c69766443df09fc9fb06ebf5"
+  },
+  "routes": {
+    "representation_selection_audit": {
+      "label": "full nested MLP representation selector",
+      "source": "p2_k3_paired_exact.json",
+      "interpretation": "representation choice is nested inside each outer fold; candidate model family is fixed to the MLP",
+      "systems": {
+        "abl1": {
+          "n_mutations": 6,
+          "all_mutation_mae": 0.2625464544444444,
+          "leave_one_observation_out": {
+            "definition": "mean of the already frozen outer-fold errors after deleting one held-out mutation; no model or selector is refit",
+            "mae_by_deleted_mutation": {
+              "M290L": 0.2712567548,
+              "L301I": 0.29151344199999996,
+              "M290L_L301I": 0.2726620573333333,
+              "F382L": 0.24123867533333332,
+              "F382Y": 0.3045419476666667,
+              "F382V": 0.19406584953333333
+            },
+            "minimum_mae": 0.19406584953333333,
+            "minimum_when_deleted": "F382V",
+            "maximum_mae": 0.3045419476666667,
+            "maximum_when_deleted": "F382Y"
+          },
+          "double_mutant_exclusion": {
+            "excluded_mutation": "M290L_L301I",
+            "n_remaining": 5,
+            "mae": 0.2726620573333333,
+            "definition": "mean of frozen outer-fold errors after deleting the declared double mutant; no model or selector is refit"
+          }
+        },
+        "src": {
+          "n_mutations": 8,
+          "all_mutation_mae": 0.39904742025,
+          "leave_one_observation_out": {
+            "definition": "mean of the already frozen outer-fold errors after deleting one held-out mutation; no model or selector is refit",
+            "mae_by_deleted_mutation": {
+              "SrcKD-L410A": 0.37533716895238095,
+              "SrcKD-V332I": 0.4107881375238095,
+              "SrcKD-L270F_V332I": 0.41046109823809523,
+              "SrcKD-L325A": 0.38796846342857144,
+              "SrcKD-A311I": 0.4150331301904762,
+              "SrcKD-V380A": 0.4070317462857143,
+              "SrcKD-V331A": 0.40576901666666665,
+              "SrcKD-F405A": 0.3799906007142857
+            },
+            "minimum_mae": 0.37533716895238095,
+            "minimum_when_deleted": "SrcKD-L410A",
+            "maximum_mae": 0.4150331301904762,
+            "maximum_when_deleted": "SrcKD-A311I"
+          },
+          "double_mutant_exclusion": {
+            "excluded_mutation": "SrcKD-L270F_V332I",
+            "n_remaining": 7,
+            "mae": 0.41046109823809523,
+            "definition": "mean of frozen outer-fold errors after deleting the declared double mutant; no model or selector is refit"
+          }
+        }
+      }
+    },
+    "candidate_model_confirmatory": {
+      "label": "nested candidate-model confirmatory route",
+      "source": "p2_k3_nested_results.json",
+      "interpretation": "candidate representation and model family are selected inside each outer fold under the confirmatory protocol",
+      "systems": {
+        "abl1": {
+          "n_mutations": 6,
+          "all_mutation_mae": 0.44511347594444445,
+          "leave_one_observation_out": {
+            "definition": "mean of the already frozen outer-fold errors after deleting one held-out mutation; no model or selector is refit",
+            "mae_by_deleted_mutation": {
+              "M290L": 0.4888806,
+              "L301I": 0.43560800000000005,
+              "M290L_L301I": 0.4489346,
+              "F382L": 0.43033099999999996,
+              "F382Y": 0.4298732,
+              "F382V": 0.4370526
+            },
+            "minimum_mae": 0.4298732,
+            "minimum_when_deleted": "F382Y",
+            "maximum_mae": 0.4888806,
+            "maximum_when_deleted": "M290L"
+          },
+          "double_mutant_exclusion": {
+            "excluded_mutation": "M290L_L301I",
+            "n_remaining": 5,
+            "mae": 0.4489346,
+            "definition": "mean of frozen outer-fold errors after deleting the declared double mutant; no model or selector is refit"
+          },
+          "mean_of_display_precision_mutation_errors": 0.4451133333333333,
+          "leave_site_out_retraining": {
+            "definition": "the entire mutation family is held out and the confirmatory route is retrained; these values are not row-deletion summaries",
+            "groups": {
+              "F382_family": {
+                "group_mae": 0.26724303855555553,
+                "members": [
+                  "F382L",
+                  "F382Y",
+                  "F382V"
+                ],
+                "comparator": 0.27185185185185184
+              },
+              "290_301": {
+                "group_mae": 0.3323498596666667,
+                "members": [
+                  "M290L",
+                  "L301I",
+                  "M290L_L301I"
+                ],
+                "comparator": 0.14296296296296296
+              }
+            }
+          }
+        },
+        "src": {
+          "n_mutations": 8,
+          "all_mutation_mae": 0.37002387679166665,
+          "leave_one_observation_out": {
+            "definition": "mean of the already frozen outer-fold errors after deleting one held-out mutation; no model or selector is refit",
+            "mae_by_deleted_mutation": {
+              "SrcKD-L410A": 0.3309654285714286,
+              "SrcKD-V332I": 0.38553542857142853,
+              "SrcKD-L270F_V332I": 0.36982585714285715,
+              "SrcKD-L325A": 0.3509838571428571,
+              "SrcKD-A311I": 0.4227814285714286,
+              "SrcKD-V380A": 0.3867027142857143,
+              "SrcKD-V331A": 0.3705117142857143,
+              "SrcKD-F405A": 0.3428855714285714
+            },
+            "minimum_mae": 0.3309654285714286,
+            "minimum_when_deleted": "SrcKD-L410A",
+            "maximum_mae": 0.4227814285714286,
+            "maximum_when_deleted": "SrcKD-A311I"
+          },
+          "double_mutant_exclusion": {
+            "excluded_mutation": "SrcKD-L270F_V332I",
+            "n_remaining": 7,
+            "mae": 0.36982585714285715,
+            "definition": "mean of frozen outer-fold errors after deleting the declared double mutant; no model or selector is refit"
+          },
+          "mean_of_display_precision_mutation_errors": 0.37002399999999996,
+          "leave_site_out_retraining": {
+            "definition": "the entire mutation family is held out and the confirmatory route is retrained; these values are not row-deletion summaries",
+            "groups": {
+              "N_lobe": {
+                "group_mae": 0.35370970780000005,
+                "members": [
+                  "SrcKD-L270F_V332I",
+                  "SrcKD-A311I",
+                  "SrcKD-L325A",
+                  "SrcKD-V331A",
+                  "SrcKD-V332I"
+                ],
+                "comparator": 0.33466666666666667
+              },
+              "C_lobe": {
+                "group_mae": 0.4332842592222222,
+                "members": [
+                  "SrcKD-V380A",
+                  "SrcKD-F405A",
+                  "SrcKD-L410A"
+                ],
+                "comparator": 0.3591111111111111
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

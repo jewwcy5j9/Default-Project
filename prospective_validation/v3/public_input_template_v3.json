@@ -1,0 +1,26 @@
+{
+  "protocol_version": "3.0.0",
+  "panel_id": "[CUSTODIAN_ASSIGNED_NONIDENTIFYING_ID]",
+  "system_name": "[FILL ONLY AFTER WRITTEN CONFIRMATION]",
+  "wild_type_sequence": "[CANONICAL_AMINO_ACID_SEQUENCE]",
+  "wt_population": [0.0, 0.0, 0.0],
+  "state_definitions": ["[STATE_0]", "[STATE_1]", "[STATE_2]"],
+  "conditions": {
+    "construct": "[ONE_UNIFORM_CONSTRUCT]",
+    "ligand": "[ONE_UNIFORM_LIGAND_CONDITION]",
+    "temperature": "[ONE_UNIFORM_TEMPERATURE]",
+    "buffer": "[ONE_UNIFORM_BUFFER]",
+    "state_model": "[ONE_FROZEN_K3_STATE_MODEL]"
+  },
+  "uncertainty_metadata": {
+    "allowed": "measurement precision or missingness only; no direction, rank, or result hints"
+  },
+  "mutations": [
+    {
+      "mutation_id": "[MUTATION_ID]",
+      "substitutions": [
+        {"reported_position": "[OPTIONAL]", "sequence_index_1based": 1, "from": "A", "to": "V"}
+      ]
+    }
+  ]
+}

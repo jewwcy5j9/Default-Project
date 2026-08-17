@@ -1,0 +1,47 @@
+{
+  "spec_source": "NEXT_PHASE_EXECUTION_PLAN.md 阶段C C3",
+  "cells_total": 42,
+  "cells_ok": 42,
+  "cells_non_degenerate": 40,
+  "cells_degenerate": 2,
+  "degenerate_cells": [
+    {
+      "state": "i2",
+      "mutation": "M290L"
+    },
+    {
+      "state": "i2",
+      "mutation": "M290L_L301I"
+    }
+  ],
+  "degenerate_protocol_ok": true,
+  "failures": [],
+  "final_5of5_success": false,
+  "final_protocol_success": true,
+  "n_runs_per_cell_min_5": false,
+  "n_runs_per_non_degenerate_cell_min_5": true,
+  "spearman_foldx_vs_exp_ddg_abs": {
+    "n6_all": {
+      "rho": 0.6571428571428573,
+      "p": 0.1561749271137024,
+      "n": 6
+    },
+    "n5_excl_F382L": {
+      "rho": 0.7,
+      "p": 0.1881204043741873,
+      "n": 5
+    }
+  },
+  "spearman_threshold": 0.7,
+  "state_energy_ordering_consistency": 0.5714285714285714,
+  "ordering_threshold": 0.8,
+  "repeat_perturbation_mae": 0.09556272800000064,
+  "repeat_mae_threshold": 0.03,
+  "track12_verdict_no_reversal": true,
+  "verdicts": {
+    "spearman": "FAIL",
+    "ordering": "FAIL",
+    "repeat_mae": "FAIL",
+    "coverage": "PASS"
+  }
+}

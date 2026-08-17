@@ -1,0 +1,89 @@
+{
+  "abl1": {
+    "M290L": {
+      "cone_in": true,
+      "residual": -5.551115123125783e-17,
+      "residual_rel": -8.41078048958452e-17,
+      "shift_l1": 0.6599999999999999
+    },
+    "L301I": {
+      "cone_in": true,
+      "residual": 0.0,
+      "residual_rel": 0.0,
+      "shift_l1": 1.2600000000000002
+    },
+    "M290L_L301I": {
+      "cone_in": true,
+      "residual": 0.0,
+      "residual_rel": 0.0,
+      "shift_l1": 1.6
+    },
+    "F382L": {
+      "cone_in": true,
+      "residual": 0.0,
+      "shift_l1": 0.0
+    },
+    "F382Y": {
+      "cone_in": true,
+      "residual": 0.0,
+      "residual_rel": 0.0,
+      "shift_l1": 1.6800000000000002
+    },
+    "F382V": {
+      "cone_in": true,
+      "residual": 0.0,
+      "residual_rel": 0.0,
+      "shift_l1": 1.7799999999999998
+    }
+  },
+  "src": {
+    "SrcKD-L410A": {
+      "cone_in": true,
+      "residual": 0.0,
+      "residual_rel": 0.0,
+      "shift_l1": 0.42000000000000004
+    },
+    "SrcKD-V332I": {
+      "cone_in": true,
+      "residual": 0.0,
+      "residual_rel": 0.0,
+      "shift_l1": 0.8999999999999999
+    },
+    "SrcKD-L270F_V332I": {
+      "cone_in": true,
+      "residual": -2.7755575615628914e-17,
+      "residual_rel": -1.6521175961683877e-17,
+      "shift_l1": 1.6800000000000002
+    },
+    "SrcKD-L325A": {
+      "cone_in": true,
+      "residual": -2.7755575615628914e-17,
+      "residual_rel": -1.4922352481520923e-17,
+      "shift_l1": 1.8599999999999999
+    },
+    "SrcKD-A311I": {
+      "cone_in": true,
+      "residual": -2.7755575615628914e-17,
+      "residual_rel": -1.4922352481520923e-17,
+      "shift_l1": 1.8599999999999999
+    },
+    "SrcKD-V380A": {
+      "cone_in": true,
+      "residual": -2.7755575615628914e-17,
+      "residual_rel": -1.927470528863119e-17,
+      "shift_l1": 1.44
+    },
+    "SrcKD-V331A": {
+      "cone_in": true,
+      "residual": 0.0,
+      "residual_rel": 0.0,
+      "shift_l1": 1.4400000000000002
+    },
+    "SrcKD-F405A": {
+      "cone_in": true,
+      "residual": 0.0,
+      "residual_rel": 0.0,
+      "shift_l1": 1.44
+    }
+  }
+}

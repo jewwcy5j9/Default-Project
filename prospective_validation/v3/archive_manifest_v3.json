@@ -1,0 +1,40 @@
+{
+  "package": "prospective_v3_20260810",
+  "protocol_version": "3.0.0",
+  "freeze_date": "2026-08-10",
+  "files": {
+    "README.md": "e952ac69738e563d79f1762ea76b415f03683e05a44dfe4d37eed96d5747f1af",
+    "preregistration_v3.md": "4137a1e9c551391458d12234c60e0d5f6e856b858190a0e66c1c83f8d4ee3145",
+    "analysis_plan_v3.md": "34a58d8a56d8f5951bc3ea53f1cef1691d0a51524041f42138fda8fe12ff3f22",
+    "protocol_lock_v3.json": "bf00ca90c2a695c38169679fc197f6fac93b4d915be5892e41b02b1a7685c76a",
+    "model_manifest_v3.json": "ba95d8c13ebc15382d2c5012ad1cb5e6f853955f9680762ff307bc24412f62b5",
+    "public_input_schema_v3.json": "ab30bdf909c87ecca4b81f5684e4bfc036debb2e65ae0b203ee5d81abb318161",
+    "private_target_schema_v3.json": "d062c3b0223baa0fbbd0c0417e46f25f035dbef5eb0554f2dd1cd17bbb3b14a6",
+    "public_input_template_v3.json": "9267e17a02c881ec4a4ccab2b28716a0b932238f91db5c46bdcfd7cfb1cdb35e",
+    "private_targets_template_v3.json": "b10ccbb1d1060dc23b01a85711d5c27f4a3d9d73741808872dc143e073ce7b18",
+    "environment_lock_v3.txt": "272d316b4db45bc7d839c2403e19c6a74fd96e8b917920abfd0bc563e07ecc72",
+    "run_custodian_v3.py": "95a90f2da05d888ca4cef30fa00891c5fd652de316bb20fb5f77e992f70ebf09",
+    "prepare_esm2_features_v3.py": "7806508f7ba467c94258b635cc41f54d05dc314e68740cfcfd46758d785ab533",
+    "dry_run_v3.py": "c7ae1d1ec0014f6579f19ea3fba14bcd24ba148b7dba885d164fa913a1467fe4",
+    "reveal_log_v3.md": "e7f0b9b561422c71aaa834e231b281a866dde7d9186e78f21312e3861169f6d2",
+    "validate_v3.py": "0acdd51e1d89a5f6e1a9f434ce661709869ebd2604b76274cb17ddb166836d32",
+    "validation_report_v3.md": "1d8d41cd9c2be156517d625ed1a3c09f337d34d02001aabbb41e129eadf0ca3f",
+    "tests/test_v3_protocol.py": "7b7844492cd3d0e621fed7e531d26fdc40cb66fd3fea1c124c0cc89d80f7c160"
+  },
+  "exclusions": [
+    "outreach",
+    "dry_run_outputs",
+    "private target data",
+    "model weights",
+    "v2 historical files"
+  ],
+  "archive": "prospective_v3_20260810.zip",
+  "archive_sha256": "79061f54f5a558bfdff1467fcb48303be4eff28701eeac18853e52cfda4dfdba",
+  "v2_immutable_hashes": {
+    "preregistration.md": "be28a1a1727ef9411baaf18c87f3812a8daa31582eee94d62fb8599a8f76109b",
+    "analysis_plan.md": "d17b74d09e898ed8a3816f1c87e2491e54348c1d494f00c80eeea479560a7eb1",
+    "protocol_lock.json": "e4794d4e8286f042e0151d94340f1ca90a01d13dfc8765fe97a2198895e743fd",
+    "model_manifest.json": "53b22977273f8feed5c792901b53fc66576f66af2341c411a61b96ab5640d355",
+    "archive_20260808_adr001.zip": "2a5112cbe555830466dcdd43afb35827cdb3ba6bd4d05f0c3ad47b435bf04185"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "p2c_empirical_local_slopes_v1",
+  "definition": "full-data fitted output separation / frozen 1x feature distance; diagnostic secant slope, not global Lipschitz estimate",
+  "pair": [
+    "SrcKD-L410A",
+    "SrcKD-F405A"
+  ],
+  "feature_distance_l2": 0.009328358208955279,
+  "target_shift_distance_l1": 1.68,
+  "models": {
+    "CLR-Ridge": {
+      "output_separation_l1": 0.0033857560720422825,
+      "secant_slope_output_l1_per_feature_l2": 0.36295305092293056
+    },
+    "CLR-GP": {
+      "output_separation_l1": 1.6792694193707498,
+      "secant_slope_output_l1_per_feature_l2": 180.0176817565433
+    },
+    "kNN(1)": {
+      "output_separation_l1": 1.67999632000368,
+      "secant_slope_output_l1_per_feature_l2": 180.09560550439343
+    },
+    "MLP(2 seeds)": {
+      "output_separation_l1": 0.6328539252281189,
+      "secant_slope_output_l1_per_feature_l2": 67.84194078445395
+    }
+  },
+  "exact_collision_control": {
+    "system": "abl1",
+    "group": "F382L/F382Y/F382V",
+    "feature_distance_l2": 0.0,
+    "slope": null,
+    "note": "zero denominator; treated as an exact collision rather than assigned a numerical slope"
+  },
+  "position_scale_sensitivity": {
+    "0.01": {
+      "d_feat": 9.328358208955223e-05,
+      "in_collision_range": true
+    },
+    "0.1": {
+      "d_feat": 0.0009328358208955224,
+      "in_collision_range": true
+    },
+    "0.5": {
+      "d_feat": 0.0046641791044776115,
+      "in_collision_range": true
+    },
+    "1.0": {
+      "d_feat": 0.009328358208955223,
+      "in_collision_range": true
+    },
+    "2.0": {
+      "d_feat": 0.018656716417910446,
+      "in_collision_range": true
+    },
+    "10.0": {
+      "d_feat": 0.09328358208955223,
+      "in_collision_range": true
+    },
+    "100.0": {
+      "d_feat": 0.9328358208955223,
+      "in_collision_range": false
+    }
+  },
+  "source_hashes": {
+    "collision": "0041dbda17299fa4c3db39842ebcdb3de5a434fb94f0580856db4077e6b48171",
+    "review": "fc427c8eb258c90f9257c1d6a642bd6234103e2861784e3d0955fcece787de94"
+  }
+}

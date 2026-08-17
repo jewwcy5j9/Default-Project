@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "script": "p2_eval.py",
+    "version": "0.1",
+    "hash": "abcd",
+    "date": "2026-08-07",
+    "device": "cuda"
+  },
+  "results": {
+    "per_fold": {}
+  },
+  "metrics": {
+    "mae": 0.1767,
+    "direction": "7/7"
+  }
+}

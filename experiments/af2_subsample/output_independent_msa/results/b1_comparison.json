@@ -1,0 +1,266 @@
+{
+  "n_predictions_total": 480,
+  "original_option_b": {
+    "WT": {
+      "N_total": 120,
+      "N_active": 92,
+      "N_I1": 0,
+      "N_I2": 0,
+      "N_unclass": 28,
+      "coverage_active": 0.7666666666666667,
+      "coverage_i1": 0.0,
+      "coverage_i2": 0.0,
+      "coverage_unclass": 0.23333333333333334,
+      "P_exp_active": 0.88,
+      "accuracy": 0.8712121212121213,
+      "error": 0.12878787878787873,
+      "coverage_active_ci": [
+        0.6916666666666667,
+        0.8333333333333334
+      ],
+      "acc_ci": [
+        0.7859848484848484,
+        0.946969696969697
+      ],
+      "is_small_sample": false
+    },
+    "L301I": {
+      "N_total": 120,
+      "N_active": 94,
+      "N_I1": 0,
+      "N_I2": 0,
+      "N_unclass": 26,
+      "coverage_active": 0.7833333333333333,
+      "coverage_i1": 0.0,
+      "coverage_i2": 0.0,
+      "coverage_unclass": 0.21666666666666667,
+      "P_exp_active": 0.25,
+      "accuracy": -1.1333333333333333,
+      "error": 2.1333333333333333,
+      "coverage_active_ci": [
+        0.7083333333333334,
+        0.8502083333333331
+      ],
+      "acc_ci": [
+        -1.4008333333333332,
+        -0.8333333333333335
+      ],
+      "is_small_sample": false
+    },
+    "M290L_L301I": {
+      "N_total": 120,
+      "N_active": 97,
+      "N_I1": 0,
+      "N_I2": 0,
+      "N_unclass": 23,
+      "coverage_active": 0.8083333333333333,
+      "coverage_i1": 0.0,
+      "coverage_i2": 0.0,
+      "coverage_unclass": 0.19166666666666668,
+      "P_exp_active": 0.08,
+      "accuracy": -8.104166666666668,
+      "error": 9.104166666666668,
+      "coverage_active_ci": [
+        0.7333333333333333,
+        0.875
+      ],
+      "acc_ci": [
+        -8.9375,
+        -7.166666666666666
+      ],
+      "is_small_sample": false
+    },
+    "F382V": {
+      "N_total": 120,
+      "N_active": 96,
+      "N_I1": 0,
+      "N_I2": 0,
+      "N_unclass": 24,
+      "coverage_active": 0.8,
+      "coverage_i1": 0.0,
+      "coverage_i2": 0.0,
+      "coverage_unclass": 0.2,
+      "P_exp_active": 0.05,
+      "accuracy": -14.0,
+      "error": 15.0,
+      "coverage_active_ci": [
+        0.7331249999999999,
+        0.8666666666666667
+      ],
+      "acc_ci": [
+        -15.333333333333332,
+        -12.662500000000001
+      ],
+      "is_small_sample": false
+    }
+  },
+  "independent_msa_3A": {
+    "F382V": {
+      "N_total": 120,
+      "N_active": 7,
+      "N_I1": 0,
+      "N_I2": 0,
+      "N_unclass": 113,
+      "coverage_active": 0.058333333333333334,
+      "coverage_i1": 0.0,
+      "coverage_i2": 0.0,
+      "coverage_unclass": 0.9416666666666667
+    },
+    "L301I": {
+      "N_total": 120,
+      "N_active": 0,
+      "N_I1": 0,
+      "N_I2": 0,
+      "N_unclass": 120,
+      "coverage_active": 0.0,
+      "coverage_i1": 0.0,
+      "coverage_i2": 0.0,
+      "coverage_unclass": 1.0
+    },
+    "M290L_L301I": {
+      "N_total": 120,
+      "N_active": 1,
+      "N_I1": 0,
+      "N_I2": 0,
+      "N_unclass": 119,
+      "coverage_active": 0.008333333333333333,
+      "coverage_i1": 0.0,
+      "coverage_i2": 0.0,
+      "coverage_unclass": 0.9916666666666667
+    },
+    "WT": {
+      "N_total": 120,
+      "N_active": 5,
+      "N_I1": 0,
+      "N_I2": 0,
+      "N_unclass": 115,
+      "coverage_active": 0.041666666666666664,
+      "coverage_i1": 0.0,
+      "coverage_i2": 0.0,
+      "coverage_unclass": 0.9583333333333334
+    }
+  },
+  "sensitivity": {
+    "2.5A": {
+      "F382V": {
+        "N_total": 120,
+        "N_active": 7,
+        "N_I1": 0,
+        "N_I2": 0,
+        "N_unclass": 113,
+        "coverage_active": 0.058333333333333334,
+        "coverage_i1": 0.0,
+        "coverage_i2": 0.0,
+        "coverage_unclass": 0.9416666666666667
+      },
+      "L301I": {
+        "N_total": 120,
+        "N_active": 0,
+        "N_I1": 0,
+        "N_I2": 0,
+        "N_unclass": 120,
+        "coverage_active": 0.0,
+        "coverage_i1": 0.0,
+        "coverage_i2": 0.0,
+        "coverage_unclass": 1.0
+      },
+      "M290L_L301I": {
+        "N_total": 120,
+        "N_active": 1,
+        "N_I1": 0,
+        "N_I2": 0,
+        "N_unclass": 119,
+        "coverage_active": 0.008333333333333333,
+        "coverage_i1": 0.0,
+        "coverage_i2": 0.0,
+        "coverage_unclass": 0.9916666666666667
+      },
+      "WT": {
+        "N_total": 120,
+        "N_active": 5,
+        "N_I1": 0,
+        "N_I2": 0,
+        "N_unclass": 115,
+        "coverage_active": 0.041666666666666664,
+        "coverage_i1": 0.0,
+        "coverage_i2": 0.0,
+        "coverage_unclass": 0.9583333333333334
+      }
+    },
+    "3.5A": {
+      "F382V": {
+        "N_total": 120,
+        "N_active": 7,
+        "N_I1": 0,
+        "N_I2": 0,
+        "N_unclass": 113,
+        "coverage_active": 0.058333333333333334,
+        "coverage_i1": 0.0,
+        "coverage_i2": 0.0,
+        "coverage_unclass": 0.9416666666666667
+      },
+      "L301I": {
+        "N_total": 120,
+        "N_active": 0,
+        "N_I1": 0,
+        "N_I2": 0,
+        "N_unclass": 120,
+        "coverage_active": 0.0,
+        "coverage_i1": 0.0,
+        "coverage_i2": 0.0,
+        "coverage_unclass": 1.0
+      },
+      "M290L_L301I": {
+        "N_total": 120,
+        "N_active": 1,
+        "N_I1": 0,
+        "N_I2": 0,
+        "N_unclass": 119,
+        "coverage_active": 0.008333333333333333,
+        "coverage_i1": 0.0,
+        "coverage_i2": 0.0,
+        "coverage_unclass": 0.9916666666666667
+      },
+      "WT": {
+        "N_total": 120,
+        "N_active": 5,
+        "N_I1": 0,
+        "N_I2": 0,
+        "N_unclass": 115,
+        "coverage_active": 0.041666666666666664,
+        "coverage_i1": 0.0,
+        "coverage_i2": 0.0,
+        "coverage_unclass": 0.9583333333333334
+      }
+    }
+  },
+  "plddt": {
+    "WT": {
+      "mean": 57.35582826362485,
+      "n": 120
+    },
+    "L301I": {
+      "mean": 54.56356210392902,
+      "n": 120
+    },
+    "M290L_L301I": {
+      "mean": 54.65381970849176,
+      "n": 120
+    },
+    "F382V": {
+      "mean": 55.53175095057038,
+      "n": 120
+    }
+  },
+  "verdict": {
+    "primary": "ROBUST",
+    "max_i1i2_3A": 0.0,
+    "intermediate_consistent": false,
+    "d_unclassified": {
+      "WT": 0.7250000000000001,
+      "L301I": 0.7833333333333333,
+      "M290L_L301I": 0.8,
+      "F382V": 0.7416666666666667
+    }
+  }
+}

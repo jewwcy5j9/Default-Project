@@ -1,0 +1,88 @@
+{
+  "schema_version": "p3-dynamic-range-normalization-v1",
+  "definition": {
+    "normalized_mae": "raw_mae / constant_wt_mae",
+    "constant_wt_mae": "mean absolute mutant-minus-WT population shift over all mutation-state coordinates",
+    "interpretation": "1.0 equals constant-WT error; lower is better; descriptive only and not a model-selection criterion"
+  },
+  "source_hashes": {
+    "nested_artifact": "190cc2660e705a80eeed5dd9c55dcd837b4626661a8e9996089f7266230bd748",
+    "abl1_population_source": "8853773bb65b7c01233998f01fa16771c246d1338ba07b9c338cd9b0c64ebeac",
+    "src_population_source": "d4d86555da312451760b9f64509796f8237f127edf3b98607f0c0735ae4944fc",
+    "script": "e229b4873aa87f61824ea2246e6c335b42da03401f1a7daa24582f17e12d364e"
+  },
+  "systems": {
+    "abl1": {
+      "n_mutations": 6,
+      "mutation_ids": [
+        "M290L",
+        "L301I",
+        "M290L_L301I",
+        "F382L",
+        "F382Y",
+        "F382V"
+      ],
+      "state_order": [
+        "Active",
+        "I1",
+        "I2"
+      ],
+      "state_ranges": [
+        0.83,
+        0.1,
+        0.8899999999999999
+      ],
+      "raw_mae": {
+        "constant_wt": 0.3877777777777778,
+        "loo_training_mean": 0.23288888888888884,
+        "fixed_llr_plus_position_fold_local": 0.1400076405297327,
+        "fixed_pca_gpu_canonical": 0.1477492904,
+        "full_nested_mlp": 0.26254645444444447
+      },
+      "normalized_mae": {
+        "constant_wt": 1.0,
+        "loo_training_mean": 0.6005730659025786,
+        "fixed_llr_plus_position_fold_local": 0.36105122199644535,
+        "fixed_pca_gpu_canonical": 0.38101536206303727,
+        "full_nested_mlp": 0.6770538939828081
+      }
+    },
+    "src": {
+      "n_mutations": 8,
+      "mutation_ids": [
+        "SrcKD-L410A",
+        "SrcKD-V332I",
+        "SrcKD-L270F_V332I",
+        "SrcKD-L325A",
+        "SrcKD-A311I",
+        "SrcKD-V380A",
+        "SrcKD-V331A",
+        "SrcKD-F405A"
+      ],
+      "state_order": [
+        "Active",
+        "E1",
+        "E2"
+      ],
+      "state_ranges": [
+        0.73,
+        0.84,
+        0.84
+      ],
+      "raw_mae": {
+        "constant_wt": 0.45999999999999996,
+        "loo_training_mean": 0.29107142857142854,
+        "fixed_llr_plus_position_fold_local": 0.3442423963035566,
+        "fixed_pca_gpu_canonical": 0.300582113,
+        "full_nested_mlp": 0.39904742025
+      },
+      "normalized_mae": {
+        "constant_wt": 1.0,
+        "loo_training_mean": 0.6327639751552795,
+        "fixed_llr_plus_position_fold_local": 0.7483530354425143,
+        "fixed_pca_gpu_canonical": 0.6534393760869566,
+        "full_nested_mlp": 0.8674943918478262
+      }
+    }
+  }
+}

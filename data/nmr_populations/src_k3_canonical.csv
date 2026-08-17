@@ -1,0 +1,13 @@
+record_id,mutation_id,state_A,state_E1,state_E2,measurement_scope,probe_id,source_location,extraction_method,uncertainty_kind,uncertainty,used_in_primary,panel_order,status,dataset_version,notes
+figs5_met305__SrcKD-WT,SrcKD-WT,0.72,0.07,0.21,probe_specific,Met305,cui2025:FigS5:Met305,visual_bar_read,curator_visual_range_fraction,0.05-0.10,true,0,accepted,src_k3_labels_v1,Primary panel WT
+figs5_met305__SrcKD-L410A,SrcKD-L410A,0.73,0.27,0.00,probe_specific,Met305,cui2025:FigS5:Met305,visual_bar_read,curator_visual_range_fraction,0.05-0.10,true,1,accepted,src_k3_labels_v1,Primary panel
+figs5_met305__SrcKD-V332I,SrcKD-V332I,0.48,0.52,0.00,probe_specific,Met305,cui2025:FigS5:Met305,visual_bar_read,curator_visual_range_fraction,0.05-0.10,true,2,accepted,src_k3_labels_v1,Caption-ordered Met305 record
+figs5_met305__SrcKD-L270F_V332I,SrcKD-L270F_V332I,0.09,0.91,0.00,probe_specific,Met305,cui2025:FigS5:Met305,visual_bar_read,curator_visual_range_fraction,0.05-0.10,true,3,accepted,src_k3_labels_v1,Primary panel double mutant
+figs5_met305__SrcKD-L325A,SrcKD-L325A,0.00,1.00,0.00,probe_specific,Met305,cui2025:FigS5:Met305,visual_bar_read,curator_visual_range_fraction,0.05-0.10,true,4,accepted,src_k3_labels_v1,Approximately 100 percent E1
+figs5_met305__SrcKD-A311I,SrcKD-A311I,0.00,1.00,0.00,probe_specific,Met305,cui2025:FigS5:Met305,visual_bar_read,curator_visual_range_fraction,0.05-0.10,true,5,accepted,src_k3_labels_v1,State-reference row also listed in Table S2
+figs5_met305__SrcKD-V380A,SrcKD-V380A,0.00,0.62,0.38,probe_specific,Met305,cui2025:FigS5:Met305,visual_bar_read,curator_visual_range_fraction,0.05-0.10,true,6,accepted,src_k3_labels_v1,Primary panel
+figs5_met305__SrcKD-V331A,SrcKD-V331A,0.00,0.45,0.55,probe_specific,Met305,cui2025:FigS5:Met305,visual_bar_read,curator_visual_range_fraction,0.05-0.10,true,7,accepted,src_k3_labels_v1,Primary panel
+figs5_met305__SrcKD-F405A,SrcKD-F405A,0.00,0.16,0.84,probe_specific,Met305,cui2025:FigS5:Met305,visual_bar_read,curator_visual_range_fraction,0.05-0.10,true,8,accepted,src_k3_labels_v1,Primary panel
+table_s2_global__SrcKD-WT,SrcKD-WT,0.80,0.10,0.10,global_fit,,cui2025:TableS2,direct_table,reported_sd_fraction,0.054|0.017|0.058,false,,accepted,src_k3_labels_v1,Provenance record not used by either current panel
+table_s2_global__SrcKD-L410A,SrcKD-L410A,0.96,0.03,0.01,global_fit,,cui2025:TableS2,direct_table,reported_sd_fraction,0.030|0.0003|0.029,false,,accepted,src_k3_labels_v1,Only row substituted in the hybrid sensitivity panel
+legacy_ambiguous__SrcKD-V332I,SrcKD-V332I,0.73,0.27,0.00,ambiguous_legacy,,cui2025:legacy-curated-entry,legacy_curated_entry,not_available,,false,,ambiguous_not_used,src_k3_labels_v1,Conflicts with caption-ordered Met305 row and duplicates L410A

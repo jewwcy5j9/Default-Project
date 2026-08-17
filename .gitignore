@@ -1,0 +1,24 @@
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# LaTeX build products
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+
+# Local/editor residue
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+tmp/
+
+# Local environments
+.venv*/

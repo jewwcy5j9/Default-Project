@@ -1,0 +1,14 @@
+{
+  "script": "experiments/iclr_restructuring/p4_support_resolution_selection.py",
+  "script_sha256": "5fbcf14edd625cc67893ce26ff349d13ab9c4d9011fe6f3b59c6d14a99ca1957",
+  "json_sha256": "b0d9ada6622f60e0ed19a5d6bae7b6394da76cb40365ae05770e9be9b2ebe584",
+  "csv_sha256": "b2e9c657b0d5d7041db221f1de3c941b68eead22c48124808780b64c7fd751ce",
+  "figure_pdf_sha256": "12f40c6ae35c774f156a536d26e6435ce36d581c4d7ee15a89a713c674a437af",
+  "figure_png_sha256": "a1f1587797d9e7eb8bcfdda894c901a6ed31d1a84a5ce6a6e1c0695524c1419a",
+  "records": 72000,
+  "settings": 360,
+  "repeats_per_setting": 200,
+  "all_settings_retained": true,
+  "self_test": "passed",
+  "figure_amendment_20260814": "panel d added by the P6 derived detection benchmark (A1); panels a/b/c and all JSON/CSV records unchanged"
+}

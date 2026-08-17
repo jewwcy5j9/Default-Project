@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "script": "p2_k3_eval.py",
+    "version": "1.0.0",
+    "hash": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "date": "2026-08-08",
+    "device": "cuda"
+  },
+  "data_hashes": {
+    "canonical_data": "feedfacefeedfacefeedfacefeedfacefeedfacefeedfacefeedfacefeedface",
+    "feature_cache": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+    "model_checkpoint": "cafebabecafebabecafebabecafebabecafebabecafebabecafebabecafebabe"
+  },
+  "label_info": {
+    "system": "abl1",
+    "state_order": ["Active", "I1", "I2"],
+    "wt_population": [0.88, 0.06, 0.06],
+    "label_source": "xie2020_abl1_FINAL.json",
+    "probe_or_global_fit": "probe"
+  },
+  "folds": {
+    "outer": ["M290L", "L301I", "M290L_L301I", "F382L", "F382Y", "F382V"],
+    "inner": {
+      "M290L": ["L301I", "M290L_L301I", "F382L", "F382Y", "F382V"],
+      "L301I": ["M290L", "M290L_L301I", "F382L", "F382Y", "F382V"]
+    },
+    "seed_scheme": "seed*100+hold_out",
+    "seeds": [0, 1, 2, 3, 4]
+  },
+  "results": {
+    "per_fold": {
+      "M290L": {
+        "holdout": "M290L",
+        "selected_combo": "C1",
+        "selected_model": "LowRankCDST",
+        "per_seed_predictions": {
+          "0": [0.33, 0.33, 0.34],
+          "1": [0.34, 0.33, 0.33],
+          "2": [0.33, 0.34, 0.33],
+          "3": [0.33, 0.33, 0.34],
+          "4": [0.34, 0.33, 0.33]
+        },
+        "mean_predictions": [0.334, 0.332, 0.334],
+        "targets": [0.55, 0.1, 0.35],
+        "mae": 0.2207,
+        "inner_scores": { "C1.LowRankCDST": 0.19 },
+        "transform_params": { "scaler": "StandardScaler(fit on inner train)" },
+        "catastrophic": false
+      }
+    }
+  },
+  "metrics": {
+    "mae_per_mutant": { "M290L": 0.2207 },
+    "mae": 0.2207,
+    "direction": "1/1",
+    "jsd": 0.031,
+    "u1_u2_contrast_mae": { "u1": 0.41, "u2": 0.28, "ilr_z1": 0.30, "ilr_z2": 0.25 },
+    "leave_site_out": {
+      "F382_family": { "group_mae": 0.21, "members": ["F382L", "F382Y", "F382V"] }
+    },
+    "catastrophic_folds": [],
+    "support_stratified_error": { "support_in": 0.19, "support_out": 0.31 },
+    "alternative_label_sensitivity": { "applied": false },
+    "paired_per_mutant_improvement": { "M290L": 0.012 }
+  },
+  "hard_gates": {
+    "verdict": "PENDING",
+    "gates": {
+      "abl1_nested_lt_0.2329": { "passed": true, "value": 0.2207, "threshold": 0.2329 }
+    }
+  }
+}

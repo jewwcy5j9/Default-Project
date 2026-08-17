@@ -1,0 +1,305 @@
+{
+  "schema_version": "p3-structural-baselines-audit-v1",
+  "status": {
+    "bioemu_complete_common_panel": true,
+    "boltz_complete_common_panel": true
+  },
+  "protocol": {
+    "boltz_expected_primary_cifs_per_system": 20,
+    "bioemu_expected_min_samples_per_system": 100,
+    "state_assignment": "archived DFG chi1 and alphaC analyses; full-protein assignment is protocol-specific",
+    "nmr_truth_source": "generation_model_baselines.json"
+  },
+  "bioemu": {
+    "model": "BioEmu v1.2 checkpoint (archived local inference)",
+    "requested_panel": [
+      "WT",
+      "M290L",
+      "L301I",
+      "M290L_L301I",
+      "F382L",
+      "F382Y",
+      "F382V"
+    ],
+    "systems": {
+      "WT": {
+        "path": "data\\bioemu_abl1\\WT\\all_samples.npz",
+        "exists": true,
+        "n_samples": 300,
+        "shape": {
+          "pos": [
+            300,
+            287,
+            3
+          ],
+          "node_orientations": [
+            300,
+            287,
+            3,
+            3
+          ],
+          "sequence": []
+        },
+        "sha256": "696bb86b77890acb6e90f0b8ed2fe16e2c7b92fd0db8ebee7b17a2d98b5a2b37"
+      },
+      "M290L": {
+        "path": "data\\bioemu_abl1\\M290L\\all_samples.npz",
+        "exists": true,
+        "n_samples": 100,
+        "shape": {
+          "pos": [
+            100,
+            287,
+            3
+          ],
+          "node_orientations": [
+            100,
+            287,
+            3,
+            3
+          ],
+          "sequence": []
+        },
+        "sha256": "3f1a260571ea8bea98c32a9dcad0410a6416d735b3ea956c99f0beab28f4dc23"
+      },
+      "L301I": {
+        "path": "data\\bioemu_abl1\\L301I\\all_samples.npz",
+        "exists": true,
+        "n_samples": 100,
+        "shape": {
+          "pos": [
+            100,
+            287,
+            3
+          ],
+          "node_orientations": [
+            100,
+            287,
+            3,
+            3
+          ],
+          "sequence": []
+        },
+        "sha256": "4af1d310abc885494b00d929d2d9fc5188a74b23fd7b0c870a60a7013f372513"
+      },
+      "M290L_L301I": {
+        "path": "data\\bioemu_abl1\\M290L_L301I\\all_samples.npz",
+        "exists": true,
+        "n_samples": 100,
+        "shape": {
+          "pos": [
+            100,
+            287,
+            3
+          ],
+          "node_orientations": [
+            100,
+            287,
+            3,
+            3
+          ],
+          "sequence": []
+        },
+        "sha256": "a32ca2070718a044c2456d3e622c7866174730e7227e2dac5cfbadf121f910ff"
+      },
+      "F382L": {
+        "path": "data\\bioemu_abl1\\F382L\\all_samples.npz",
+        "exists": true,
+        "n_samples": 100,
+        "shape": {
+          "pos": [
+            100,
+            287,
+            3
+          ],
+          "node_orientations": [
+            100,
+            287,
+            3,
+            3
+          ],
+          "sequence": []
+        },
+        "sha256": "5693048b877b95a943cfcaec96dfc8621ff4644dcef49e52609bba32d18dd3f3"
+      },
+      "F382Y": {
+        "path": "data\\bioemu_abl1\\F382Y\\all_samples.npz",
+        "exists": true,
+        "n_samples": 100,
+        "shape": {
+          "pos": [
+            100,
+            287,
+            3
+          ],
+          "node_orientations": [
+            100,
+            287,
+            3,
+            3
+          ],
+          "sequence": []
+        },
+        "sha256": "c4e239a66878dc57fb15d8f3428e83ee1eab7ef7252a34c5fcb32504138e1bf0"
+      },
+      "F382V": {
+        "path": "data\\bioemu_abl1\\F382V\\all_samples.npz",
+        "exists": true,
+        "n_samples": 100,
+        "shape": {
+          "pos": [
+            100,
+            287,
+            3
+          ],
+          "node_orientations": [
+            100,
+            287,
+            3,
+            3
+          ],
+          "sequence": []
+        },
+        "sha256": "1c21601c8168c6574a9a9a67d3802c3e1d17043956e7dc654423a38ad949d6a7"
+      }
+    },
+    "complete_common_panel": true,
+    "missing_systems": [],
+    "available_mutant_panel": [
+      "M290L",
+      "L301I",
+      "M290L_L301I",
+      "F382L",
+      "F382Y",
+      "F382V"
+    ]
+  },
+  "boltz": {
+    "model": "Boltz archived GPU run",
+    "requested_panel": [
+      "WT",
+      "M290L",
+      "L301I",
+      "M290L_L301I",
+      "F382L",
+      "F382Y",
+      "F382V"
+    ],
+    "systems": {
+      "WT": {
+        "prediction_dir": "data\\af3_experiment\\root\\abl1_experiment\\results\\WT\\boltz_results_abl1_WT\\predictions\\abl1_WT",
+        "n_primary_cif": 20,
+        "first_cif": "data\\af3_experiment\\root\\abl1_experiment\\results\\WT\\boltz_results_abl1_WT\\predictions\\abl1_WT\\abl1_WT_model_0.cif",
+        "first_cif_sha256": "49cd00c776ea4c832f6a2af302427c4f3b11df139d48df2ce27ae7b0c84947f4"
+      },
+      "M290L": {
+        "prediction_dir": "data\\af3_experiment\\root\\abl1_experiment\\results\\M290L\\boltz_results_abl1_M290L\\predictions\\abl1_M290L",
+        "n_primary_cif": 20,
+        "first_cif": "data\\af3_experiment\\root\\abl1_experiment\\results\\M290L\\boltz_results_abl1_M290L\\predictions\\abl1_M290L\\abl1_M290L_model_0.cif",
+        "first_cif_sha256": "b5949a8967a2e0e27de84c4174781fc4445eaec19a63343b50226f17f75f9c57"
+      },
+      "L301I": {
+        "prediction_dir": "data\\af3_experiment\\root\\abl1_experiment\\results\\L301I\\boltz_results_abl1_L301I\\predictions\\abl1_L301I",
+        "n_primary_cif": 20,
+        "first_cif": "data\\af3_experiment\\root\\abl1_experiment\\results\\L301I\\boltz_results_abl1_L301I\\predictions\\abl1_L301I\\abl1_L301I_model_0.cif",
+        "first_cif_sha256": "5cce6c3fa72851e20d445182f457cbc82c74e52c88afa4ed255bacb79b0898a6"
+      },
+      "M290L_L301I": {
+        "prediction_dir": "data\\af3_experiment\\root\\abl1_experiment\\results\\M290L_L301I\\boltz_results_abl1_M290L_L301I\\predictions\\abl1_M290L_L301I",
+        "n_primary_cif": 20,
+        "first_cif": "data\\af3_experiment\\root\\abl1_experiment\\results\\M290L_L301I\\boltz_results_abl1_M290L_L301I\\predictions\\abl1_M290L_L301I\\abl1_M290L_L301I_model_0.cif",
+        "first_cif_sha256": "9085338ee671edfdf1bf5183baa8705886d66a37172a69fa56529673b906c52d"
+      },
+      "F382L": {
+        "prediction_dir": "data\\af3_experiment\\root\\abl1_experiment\\results\\F382L\\boltz_results_abl1_F382L\\predictions\\abl1_F382L",
+        "n_primary_cif": 20,
+        "first_cif": "data\\af3_experiment\\root\\abl1_experiment\\results\\F382L\\boltz_results_abl1_F382L\\predictions\\abl1_F382L\\abl1_F382L_model_0.cif",
+        "first_cif_sha256": "8ae7a2aeef88dc4186625f4cd7d8561b6474968ab9683d17ceba75b40b8b60e7"
+      },
+      "F382Y": {
+        "prediction_dir": "data\\af3_experiment\\root\\abl1_experiment\\results\\F382Y\\boltz_results_abl1_F382Y\\predictions\\abl1_F382Y",
+        "n_primary_cif": 20,
+        "first_cif": "data\\af3_experiment\\root\\abl1_experiment\\results\\F382Y\\boltz_results_abl1_F382Y\\predictions\\abl1_F382Y\\abl1_F382Y_model_0.cif",
+        "first_cif_sha256": "5c678674cf62c368783f412728c5fd38294684eed4ec5b8c41d8dc650bdae8d5"
+      },
+      "F382V": {
+        "prediction_dir": "data\\af3_experiment\\root\\abl1_experiment\\results\\F382V\\boltz_results_abl1_F382V\\predictions\\abl1_F382V",
+        "n_primary_cif": 20,
+        "first_cif": "data\\af3_experiment\\root\\abl1_experiment\\results\\F382V\\boltz_results_abl1_F382V\\predictions\\abl1_F382V\\abl1_F382V_model_0.cif",
+        "first_cif_sha256": "0234c533c8f5a13cf422ec3d3a76a4c48018cc12a18d949434d7b3ab859439fa"
+      }
+    },
+    "complete_common_panel": true,
+    "analysis_keys": [
+      "F382L",
+      "F382V",
+      "F382Y",
+      "L301I",
+      "M290L",
+      "M290L_L301I",
+      "WT"
+    ],
+    "alphaC_analysis_keys": [
+      "F382L",
+      "F382V",
+      "F382Y",
+      "L301I",
+      "M290L",
+      "M290L_L301I",
+      "WT"
+    ],
+    "v2_analysis_keys": [
+      "F382L",
+      "F382V",
+      "F382Y",
+      "L301I",
+      "M290L",
+      "M290L_L301I",
+      "WT"
+    ],
+    "dfg_out_mae_mutants": 0.6483333333333333,
+    "alphaC_out_mae_mutants": 0.3016666666666667,
+    "note": "WT contains two additional exploratory test CIFs outside the primary prediction directory; the canonical count above is the 20 primary CIFs."
+  },
+  "source_hashes": {
+    "boltz_archive": "b142b664d80efa7fe622980abe1dd5779eae3fec24344b0add14c247ddbd69d4",
+    "boltz_analysis": "5b4bc7453a91c92c1e249aee19bb68252f4db7eb8b93235ab870cd14b659396c",
+    "boltz_alphaC_analysis": "24818f00925599aad4a8691575777737c3cc4b19dc70e98e4476677e366f18b8",
+    "boltz_v2_analysis": "2536f05bb28ea29126a1f0f5ad3352c58945c3a29299db3cbef1e529a9314cb9",
+    "generation_model_baselines": "379b02b4bc526315911c7fded2ebcf878d42175ae5054e49c5a80f52410178c4",
+    "bioemu_checkpoint": "e08e536f5529ad64677e40a88cd6af8a30b476d1de4adb7887abdf13645df810",
+    "bioemu_missing_run_manifest": "de95a6d4797d666a6a0ab97bbf05bd27091c817bb25156dbaa9e51ee4bb182e2"
+  },
+  "baseline_reference": {
+    "bioemu_populations": {
+      "WT": {
+        "frac_ground": 1.0,
+        "frac_non_ground": 0.0,
+        "note": "All 300 samples Active-like"
+      },
+      "M290L": {
+        "frac_ground": 1.0,
+        "frac_non_ground": 0.0,
+        "note": "All 100 samples Active-like"
+      },
+      "L301I": {
+        "frac_ground": 1.0,
+        "frac_non_ground": 0.0,
+        "note": "All 100 samples Active-like"
+      },
+      "F382Y": {
+        "frac_ground": 1.0,
+        "frac_non_ground": 0.0,
+        "note": "All 100 samples Active-like"
+      }
+    },
+    "nmr_truth": {
+      "M290L": 0.45,
+      "L301I": 0.75,
+      "M290L_L301I": 0.92,
+      "F382L": 0.12,
+      "F382Y": 0.9,
+      "F382V": 0.95
+    }
+  }
+}

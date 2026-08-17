@@ -1,0 +1,144 @@
+{
+  "design_audit": {
+    "abl1_variantC": {
+      "n": 6,
+      "d": 5,
+      "singulars": [
+        2.6964398281183777,
+        1.5982739200077196,
+        1.0567238017400011,
+        0.549184356490341,
+        1.226780922941099e-16
+      ],
+      "numerical_rank": 4,
+      "condition_number": 4.909899191867827,
+      "zero_variance_cols": 0
+    },
+    "abl1_pos": {
+      "n": 6,
+      "d": 4,
+      "singulars": [
+        2.2624320972853074,
+        1.49351862715729,
+        1.0565887811496955,
+        1.6920545055668808e-17
+      ],
+      "numerical_rank": 3,
+      "condition_number": 2.141260760712895,
+      "zero_variance_cols": 0
+    },
+    "src_pos": {
+      "n": 8,
+      "d": 4,
+      "singulars": [
+        1.9534599107484076,
+        1.0,
+        0.9999999999999999,
+        0.7521430374356276
+      ],
+      "numerical_rank": 4,
+      "condition_number": 2.597192041301845,
+      "zero_variance_cols": 0
+    }
+  },
+  "support": {
+    "abl1": {
+      "M290L": {
+        "support": 1.0000000000000002,
+        "shift_norm": 0.4411349000022555,
+        "n_train_dirs": 5
+      },
+      "L301I": {
+        "support": 1.0000000000000002,
+        "shift_norm": 0.864060183089118,
+        "n_train_dirs": 5
+      },
+      "M290L_L301I": {
+        "support": 1.0000000000000004,
+        "shift_norm": 1.104173899347381,
+        "n_train_dirs": 5
+      },
+      "F382L": {
+        "support": 1.0,
+        "shift_norm": 0.0,
+        "n_train_dirs": 5
+      },
+      "F382Y": {
+        "support": 1.0,
+        "shift_norm": 1.1478675881825395,
+        "n_train_dirs": 5
+      },
+      "F382V": {
+        "support": 0.9999999999999992,
+        "shift_norm": 1.2184416276539471,
+        "n_train_dirs": 5
+      }
+    },
+    "src": {
+      "SrcKD-L410A": {
+        "support": 1.0000000000000007,
+        "shift_norm": 0.29017236257093815,
+        "n_train_dirs": 7
+      },
+      "SrcKD-V332I": {
+        "support": 0.9999999999999998,
+        "shift_norm": 0.551543289325507,
+        "n_train_dirs": 7
+      },
+      "SrcKD-L270F_V332I": {
+        "support": 1.0,
+        "shift_norm": 1.0707940978544848,
+        "n_train_dirs": 7
+      },
+      "SrcKD-L325A": {
+        "support": 0.9999999999999997,
+        "shift_norm": 1.1947384651043926,
+        "n_train_dirs": 7
+      },
+      "SrcKD-A311I": {
+        "support": 0.9999999999999997,
+        "shift_norm": 1.1947384651043926,
+        "n_train_dirs": 7
+      },
+      "SrcKD-V380A": {
+        "support": 1.0000000000000002,
+        "shift_norm": 0.9218459741193211,
+        "n_train_dirs": 7
+      },
+      "SrcKD-V331A": {
+        "support": 1.0,
+        "shift_norm": 0.882269800004511,
+        "n_train_dirs": 7
+      },
+      "SrcKD-F405A": {
+        "support": 0.9999999999999999,
+        "shift_norm": 0.960937042682818,
+        "n_train_dirs": 7
+      }
+    }
+  },
+  "risk_decomposition": {
+    "abl1": {
+      "pooled_constant_risk": 0.5616666666666666,
+      "fine_constant_risk": 0.3877777777777778,
+      "fine_contrast_std_E1_share": 0.17029965748026968,
+      "n_nonactive_mass": 6
+    },
+    "src": {
+      "pooled_constant_risk": 0.56,
+      "fine_constant_risk": 0.45999999999999996,
+      "fine_contrast_std_E1_share": 0.3084006120292241,
+      "n_nonactive_mass": 8
+    }
+  },
+  "noise_resolution": {
+    "src": {
+      "lvl_5": {
+        "flipped_pairs_frac": 0.0006428571428571428
+      },
+      "lvl_10": {
+        "flipped_pairs_frac": 0.016416666666666666
+      }
+    }
+  }
+}

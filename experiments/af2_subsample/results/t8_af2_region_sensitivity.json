@@ -1,0 +1,148 @@
+{
+  "b1_icc": {
+    "F382V": {
+      "icc_model": 0.047258979206049156,
+      "icc_seed": -0.011477761836441898,
+      "icc_run": 0.153846153846154,
+      "coverage_non_active": 0.9416666666666667,
+      "n_pdb": 120
+    },
+    "L301I": {
+      "icc_model": null,
+      "icc_seed": null,
+      "icc_run": null,
+      "coverage_non_active": 1.0,
+      "n_pdb": 120
+    },
+    "M290L_L301I": {
+      "icc_model": -6.938893903907227e-17,
+      "icc_seed": -5.5511151231257815e-17,
+      "icc_run": 5.724587470723466e-17,
+      "coverage_non_active": 0.9916666666666667,
+      "n_pdb": 120
+    },
+    "WT": {
+      "icc_model": 0.023698451203582743,
+      "icc_seed": 0.027504911591355572,
+      "icc_run": 0.10256410256410256,
+      "coverage_non_active": 0.9583333333333334,
+      "n_pdb": 120
+    }
+  },
+  "b1_upper_bound": {
+    "n_trials": 480,
+    "n_i1i2_hits": 0,
+    "clopper_pearson_95_upper": 0.006221673636624847
+  },
+  "region_frame": {
+    "frame": "2HYY/I1 numbering (canonical Abl1 residue numbering)",
+    "reference_region_offsets": {
+      "i1": 0,
+      "active": 19,
+      "i2": 19
+    }
+  },
+  "region_sensitivity": {
+    "regions": {
+      "n_lobe_act": {
+        "region": "residues 235-400",
+        "n_classified": 840,
+        "n_missing": 0,
+        "n_ca_atoms_min": 165,
+        "n_ca_atoms_max": 166,
+        "state_counts": {
+          "active": 674,
+          "unclassified": 166
+        },
+        "coverage": {
+          "active": 0.8023809523809524,
+          "unclassified": 0.1976190476190476
+        },
+        "per_mutant": {
+          "WT": {
+            "active": 97,
+            "unclassified": 23
+          },
+          "M290L": {
+            "active": 94,
+            "unclassified": 26
+          },
+          "L301I": {
+            "active": 98,
+            "unclassified": 22
+          },
+          "M290L_L301I": {
+            "active": 96,
+            "unclassified": 24
+          },
+          "F382L": {
+            "active": 101,
+            "unclassified": 19
+          },
+          "F382Y": {
+            "active": 94,
+            "unclassified": 26
+          },
+          "F382V": {
+            "active": 94,
+            "unclassified": 26
+          }
+        },
+        "i1i2_hits": 0
+      },
+      "alphaC_only": {
+        "region": "residues 260-300",
+        "n_classified": 840,
+        "n_missing": 0,
+        "n_ca_atoms_min": 40,
+        "n_ca_atoms_max": 41,
+        "state_counts": {
+          "I1": 451,
+          "active": 386,
+          "unclassified": 3
+        },
+        "coverage": {
+          "I1": 0.5369047619047619,
+          "active": 0.4595238095238095,
+          "unclassified": 0.0035714285714285713
+        },
+        "per_mutant": {
+          "WT": {
+            "I1": 66,
+            "active": 53,
+            "unclassified": 1
+          },
+          "M290L": {
+            "I1": 73,
+            "active": 46,
+            "unclassified": 1
+          },
+          "L301I": {
+            "I1": 51,
+            "active": 69
+          },
+          "M290L_L301I": {
+            "I1": 59,
+            "active": 61
+          },
+          "F382L": {
+            "I1": 73,
+            "active": 47
+          },
+          "F382Y": {
+            "I1": 63,
+            "active": 56,
+            "unclassified": 1
+          },
+          "F382V": {
+            "I1": 66,
+            "active": 54
+          }
+        },
+        "i1i2_hits": 451
+      }
+    },
+    "full_protein_i1i2_hits": 0
+  },
+  "runtime_seconds": 26.142131805419922
+}

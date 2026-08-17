@@ -1,0 +1,148 @@
+{
+  "registry": "K3_BENCHMARK_REGISTRY_v1",
+  "created": "2026-08-06",
+  "status": "FROZEN (Phase-0 lock-in; amendments require ADR entry in BENCHMARK_REGISTRY.md)",
+  "scope": "Single authoritative benchmark definition for K=3 few-shot conformational population prediction (Abl1, Src). All papers/reports must reference this file + DEPRECATED_FILES.md.",
+  "systems": {
+    "abl1": {
+      "source": "Xie et al., Science 2020 (eabc2754), NMR populations",
+      "data_file": "data/nmr_populations/xie2020_abl1_FINAL.json",
+      "states": ["Active", "I1", "I2"],
+      "wt_pop": [0.88, 0.06, 0.06],
+      "core": ["WT", "M290L", "L301I", "M290L_L301I", "F382L", "F382Y", "F382V"],
+      "core_mutants": ["M290L", "L301I", "M290L_L301I", "F382L", "F382Y", "F382V"],
+      "core_n": 6,
+      "ext_mutants": ["M290L", "L301I", "M290L_L301I", "F382L", "F382Y", "F382V", "H396P", "M290L_H396P"],
+      "ext_n": 8,
+      "ext_notes": "H396P = silver tier, M290L_H396P = silver_pH65; no experimental ddG for these two -> variant C excluded from n=8",
+      "seq_len": 529
+    },
+    "src": {
+      "source": "Cui et al., Science 2025 (adw8310), Fig S5 Met305 probe",
+      "data_file": "data/nmr_populations/cui2025_src_kinase.json",
+      "states": ["Active", "E1", "E2"],
+      "wt_pop": [0.72, 0.07, 0.21],
+      "core_mutants": ["SrcKD-L410A", "SrcKD-V332I", "SrcKD-L270F_V332I", "SrcKD-L325A", "SrcKD-A311I", "SrcKD-V380A", "SrcKD-V331A", "SrcKD-F405A"],
+      "core_n": 8,
+      "ext_mutants": ["SrcKD-L410A", "SrcKD-V332I", "SrcKD-L270F_V332I", "SrcKD-L325A", "SrcKD-A311I", "SrcKD-V380A", "SrcKD-V331A", "SrcKD-F405A", "SrcKD-pY419", "SrcpY530", "SrcYEEI"],
+      "ext_n": 11,
+      "ext_notes": "perturbations: pY419 (low tier), pY530 (medium, E2 ref), YEEI (medium, E2 ref); type flag 0/1/2",
+      "seq_len": 262,
+      "label_note": "Met305-probe populations are probe-specific; L410A alternative global value [0.96,0.03,0.01] tracked as alternative-label sensitivity"
+    }
+  },
+  "metrics": {
+    "primary": "per-state MAE over K=3 states, LOO-CV, mean over folds (per-state mean abs error, mean across mutants)",
+    "direction": "fraction of mutants with sign(pred_active - wt_active) == sign(target_active - wt_active) over mutants with |target_active - wt_active| >= 0.05; mutants with |target_active - wt_active| < 0.05 are ties and excluded; reported as k/total (ADR-002 2026-08-08; supersedes 'sum-abs-shift sense' text)",
+    "required_reports": [
+      "paired per-mutant improvement",
+      "training-mean / constant-WT / CLR-ridge / CLR-GP / 1-NN baselines",
+      "u1/u2 contrast MAE",
+      "JSD",
+      "leave-site-out",
+      "catastrophic-fold count",
+      "support-stratified error",
+      "independent blind-panel exact paired test (Level 3)"
+    ],
+    "contrast_basis": {
+      "u1": "shared coarse contrast (e.g., Active vs inactive aggregate)",
+      "u2": "fine state contrast (I1 vs I2 / E1 vs E2)",
+      "reference": "Src u1=0.326, u2=0.605 (main bottleneck)"
+    }
+  },
+  "fold_protocol": {
+    "scheme": "within-system leave-one-out (LOO)",
+    "model": "LowRankCDST(K=3, rank=2, hidden_dim=32)",
+    "loss": "prob-space MSE",
+    "epochs": 800,
+    "seeds": 5,
+    "seed_scheme": "seed*100+hold_out",
+    "optimizer": "Adam lr=5e-3 wd=1e-4",
+    "baselines_protocol": "same LOO folds; CLR-ridge / CLR-GP / 1-NN on same features"
+  },
+  "frozen_seeds": [0, 1, 2, 3, 4],
+  "feature_transforms": {
+    "rule": "fold-local standardization only; fits computed on training folds only; no global transforms after Phase-0 freeze",
+    "note": "P0-1 audit (p0_fold_local_results.json): transductive bias negligible (variant C 0.0813 vs 0.0804)"
+  },
+  "baselines_frozen": {
+    "abl1_k3_n6": {
+      "constant_WT": 0.3878,
+      "training_mean": 0.2329,
+      "CLR_Ridge_variantC": 0.1788,
+      "CLR_GP_variantC": 0.1374,
+      "kNN_variantC": 0.2522,
+      "note": "CLR/kNN best on variant C (target-coupled, not experiment-free); experiment-free baselines: CLR-GP LLR 0.2229, CLR-ridge LLR 0.2616"
+    },
+    "src_k3_n8": {
+      "constant_WT": 0.4600,
+      "training_mean": 0.2911,
+      "CLR_Ridge_pos": 0.2558,
+      "CLR_GP_pos": 0.2560,
+      "kNN_pos": 0.2557,
+      "note": "CLR-GP on Extended also 0.2560; all 0.25x on Src do not exceed training mean on u2 (F405A ~0.56)"
+    }
+  },
+  "canonical_numbers_to_reproduce": {
+    "abl1_k3_n6": {
+      "variant_C": 0.0804,
+      "LLR_proxy": 0.1629,
+      "fold_local_ESM2_PCA": 0.1476,
+      "note": "fold_local_ESM2_PCA updated 2026-08-08: 8/4 value 0.1459 not reproducible in current venv (transformers 5.14.1/numpy 2.4.4/sklearn 1.9.0); 2026-08-09 R4 per-seed rerun (t7_fold_local_esm_pca_v2.json, n_seeds=5, GPU ESM-2) = 0.147749, v2b identical (diff 0.000000, match=True), canonical PASS; v1 superseded",
+      "Extended": 0.3003,
+      "pos_markers": 0.2757,
+      "Onehot": 0.2425,
+      "nested_selector": 0.2624
+    },
+    "src_k3_n8": {
+      "Extended": 0.3045,
+      "no_dVol": 0.3251,
+      "pos_markers": 0.3213,
+      "fold_local_ESM2_PCA": 0.2981,
+      "note": "fold_local_ESM2_PCA updated 2026-08-08: 8/4 value 0.3026 not reproducible in current venv; 2026-08-09 R4 per-seed rerun (t7_fold_local_esm_pca_v2.json, n_seeds=5, GPU ESM-2) = 0.300582, v2b identical (diff 0.000000, match=True), canonical PASS; v1 superseded",
+      "Onehot": 0.2606,
+      "Extended_weighted_pow05": 0.2976
+    },
+    "abl1_leave_site_out": {"variant_C": {"F382": 0.2204, "290_301": 0.0801}, "LLR": {"F382": 0.2058, "290_301": 0.2637}},
+    "src_l410a_global_sensitivity": {"Extended": 0.3712, "pos": 0.3411, "no_dVol": 0.3932}
+  },
+  "result_tiers": {
+    "exploratory": "single fixed config on the current panel; discovery only; no claims",
+    "nested_confirmatory": "selection-aware outer/inner nested CV; required for any benchmark-SOTA claim (Level 2)",
+    "prospective": "frozen model + custodian-run LOO on independent blinded panel; required for generalization claim (Level 3)"
+  },
+  "prospective_protocol": {
+    "status": "FIXED 2026-08-06 (was contradictory: within-system LOO vs pre-reveal blind)",
+    "primary_A": "zero-shot state-specific FoldX (no new-system mutant labels; pre-reveal predictions hashed)",
+    "primary_B": "custodian-run frozen few-shot LOO (model code/container frozen; custodian holds labels; outputs delivered only at unblinding)",
+    "rule": "both endpoints frozen before any new-panel label is seen"
+  },
+  "result_schema": {
+    "required_fields": [
+      "metadata (script, commit/hash, date)",
+      "fold (holdout mutant id)",
+      "per_seed_predictions (list per seed)",
+      "mean_predictions",
+      "targets",
+      "mae_per_mutant",
+      "mae",
+      "direction",
+      "u1_u2_contrast_mae",
+      "jsd",
+      "leave_site_out",
+      "catastrophic_folds",
+      "support_stratified_error"
+    ],
+    "rule": "save per-fold and per-seed predictions; never only aggregates"
+  },
+  "deprecated": "see DEPRECATED_FILES.md (full list); headline_FINAL.json, headline_comparison.json, nmr_training_results.json, generation_model_baselines.json, cdst_src_results.json, cdst_src_optimized.json, src_2state_results.json fully deprecated",
+  "provenance_files": {
+    "canonical": "results/K3_CANONICAL_SUMMARY.md",
+    "baselines": "results/constant_baselines_core.json",
+    "clr_1nn": "results/p1_core_baselines.json",
+    "nested": "results/t1_nested_cv.json",
+    "esm2": "results/t7_fold_local_esm_pca_v2.json",
+    "leave_site_out": "results/p0_grouped_cv.json",
+    "l410a_sensitivity": "results/src_k3_l410a_sensitivity.json"
+  }
+}

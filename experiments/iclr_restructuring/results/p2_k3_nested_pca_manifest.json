@@ -1,0 +1,76 @@
+{
+  "script": "p2_k3_nested_pca.py",
+  "version": "1.0.0",
+  "script_sha256": "86a7cdf05539d9a0b2ff6b1da792310ceaf49cbfcdcb1daf081d64f3373efcb1",
+  "date": "2026-08-12 00:59:09",
+  "params": {
+    "K": 3,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "epochs": 800,
+    "pca_dim": 20,
+    "candidates": [
+      "pos",
+      "ext",
+      "llr_pos",
+      "llr_only",
+      "pca20"
+    ],
+    "models_primary": [
+      "LowRankCDST"
+    ],
+    "models_secondary": [
+      "CLR-Ridge",
+      "CLR-GP",
+      "LowRankCDST"
+    ],
+    "gp_protocol": {
+      "id": "GP-primary-0.05-v1",
+      "kernel": "1.0 * RBF(length_scale=1.0) + WhiteKernel(noise_level=0.05)",
+      "alpha": 0.0001,
+      "normalize_y": true,
+      "n_restarts_optimizer": 1,
+      "random_state": 0,
+      "clr_clip": 1e-06,
+      "feature_scaling": "training-fold StandardScaler"
+    }
+  },
+  "inputs": {
+    "script": {
+      "p2_k3_nested_pca.py": "86a7cdf05539d9a0b2ff6b1da792310ceaf49cbfcdcb1daf081d64f3373efcb1"
+    },
+    "data": {
+      "xie2020_abl1_FINAL.json": "8853773bb65b7c01233998f01fa16771c246d1338ba07b9c338cd9b0c64ebeac",
+      "cui2025_src_kinase.json": "d4d86555da312451760b9f64509796f8237f127edf3b98607f0c0735ae4944fc",
+      "p2_llr_features.json": "7401cf51b82c6d3f4cf8155bc5805671dab89d19a8400774e4a10c62075728c5",
+      "p2_site_deltas.npz": "0a7b27e4943c5969ac088948202df323cd5b0f9934d83da0257fe42e0406f022"
+    },
+    "modules": {
+      "esm2_encoding.py": "8e9431b9c3ae7abb4b3d77ec844b462f3815a440b32dda9f4b4b44bdc65a5443",
+      "k3_data.py": "d20632768039de80a9bf5451536d83e9ed2d83a01eb55b21f8d3f537616bb8bd",
+      "low_rank_cdst.py": "82b5716297a769726c5e812ea80463c2654b3ab15614f6a7d56ee254e03f1a94"
+    },
+    "env": {
+      "python": "3.12.13",
+      "torch": "2.5.1+cpu",
+      "numpy": "1.26.4",
+      "device": "cpu"
+    },
+    "esm2_model": {
+      "id": "facebook/esm2_t33_650M_UR50D",
+      "source": "<external-model-directory>",
+      "sha256": "a08adabb949fa67ad3c14b509d04fd60368b35007b0095e3358f81200c4f4db0",
+      "weights_file": "<external-weight-file>"
+    }
+  },
+  "outputs": [
+    "p2_k3_nested_pca_results.json",
+    "p2_k3_nested_pca_trace.csv",
+    "p2_k3_nested_pca_deltas_{abl1,src}.npz"
+  ]
+}

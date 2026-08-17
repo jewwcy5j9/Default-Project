@@ -1,0 +1,151 @@
+{
+  "paper": "Xie T, Saleh T, Rossi P, Kalodimos CG. Science 370, eabc2754 (2020)",
+  "method": "13C CEST / 1H-13C correlation",
+  "temperature": "25C",
+  "numbering": "ABL1a (kinase domain) = Abl1b - 19",
+  "populations": {
+    "WT": {
+      "Active": 0.88,
+      "I1": 0.06,
+      "I2": 0.06,
+      "tier": "gold",
+      "source": "Fig.1C + Fig.4C",
+      "notes": "Direct CEST measurement; kex G-E1=46.8, G-E2=88.7 s-1"
+    },
+    "M290L": {
+      "Active": 0.55,
+      "I1": 0.1,
+      "I2": 0.35,
+      "tier": "gold",
+      "source": "Fig.4C",
+      "notes": "Direct from bar graph labels"
+    },
+    "L301I": {
+      "Active": 0.25,
+      "I1": 0.1,
+      "I2": 0.65,
+      "tier": "gold",
+      "source": "Fig.4C",
+      "notes": "CORRECTED: I1=10% (not 6%), Active=25% (not 29%)"
+    },
+    "M290L_L301I": {
+      "Active": 0.08,
+      "I1": 0.1,
+      "I2": 0.82,
+      "tier": "gold",
+      "source": "Fig.4C",
+      "notes": "Double mutant; direct labels"
+    },
+    "F382L": {
+      "Active": 0.88,
+      "I1": 0.06,
+      "I2": 0.06,
+      "tier": "gold",
+      "source": "Fig.4E",
+      "notes": "Direct bar graph labels; identical to WT"
+    },
+    "F382Y": {
+      "Active": 0.1,
+      "I1": 0.0,
+      "I2": 0.9,
+      "tier": "gold",
+      "source": "Fig.4E",
+      "notes": "CORRECTED: Active=10% (not 5%); I1 not stabilized"
+    },
+    "F382V": {
+      "Active": 0.05,
+      "I1": 0.0,
+      "I2": 0.95,
+      "tier": "gold",
+      "source": "Fig.4E",
+      "notes": "NEW: I2 >95%; DFG Phe->Val"
+    },
+    "I2M": {
+      "Active": 0.1,
+      "I1": 0.0,
+      "I2": 0.9,
+      "tier": "gold_i2m",
+      "source": "Fig.3F + Fig.4B + Fig.S7",
+      "notes": "NEW: Triple mutant background; imatinib-bound stabilizer"
+    },
+    "T315I": {
+      "Active": 0.93,
+      "I1": 0.0,
+      "I2": 0.07,
+      "tier": "gold_i2m",
+      "source": "Fig.4D",
+      "notes": "Measured in I2M background; gatekeeper mutation"
+    },
+    "H396P": {
+      "Active": 0.85,
+      "I1": 0.15,
+      "I2": 0.0,
+      "tier": "silver",
+      "source": "Fig.S5D + Fig.3D",
+      "notes": "NEW: I1~15% from SI; I2<1% from main text"
+    },
+    "M290L_H396P": {
+      "Active": 0.5,
+      "I1": 0.5,
+      "I2": 0.0,
+      "tier": "silver_pH65",
+      "source": "Fig.S5D",
+      "notes": "NEW: pH=6.5 condition; highest I1 population"
+    },
+    "Y272H": {
+      "Active": null,
+      "I1": null,
+      "I2": null,
+      "tier": "qualitative",
+      "source": "Fig.3E + Fig.S10",
+      "notes": "P-loop I2: 6%->16%; A-loop I2: ~6% (decoupled)"
+    },
+    "E255V": {
+      "Active": null,
+      "I1": null,
+      "I2": null,
+      "tier": "qualitative",
+      "source": "Fig.3F",
+      "notes": "Only DDG=+1.4 kcal/mol; no absolute populations"
+    },
+    "F378V": {
+      "Active": null,
+      "I1": null,
+      "I2": null,
+      "tier": "qualitative",
+      "source": "Fig.3G",
+      "notes": "I2 decreases ~4-fold; qualitative only"
+    }
+  },
+  "energies_kcal_mol": {
+    "M290L": -1.3,
+    "L301I": -2.2,
+    "M290L_L301I": -3.5,
+    "T315I": -3.2,
+    "F382V": -3.0,
+    "F382Y": -2.5,
+    "E255V": 1.4,
+    "pY412": 3.0
+  },
+  "quality_notes": {
+    "error_bars": "NONE in paper",
+    "gold_criteria": "Direct CEST bar graph labels, isolated kinase domain",
+    "gold_i2m_criteria": "Direct CEST in I2M triple mutant background",
+    "silver_criteria": "SI figures or indirect measurement",
+    "verification": {
+      "date": "2026-07-28",
+      "method": "Cross-checked against PDF text (science.abc2754.pdf) extracted via PyMuPDF",
+      "status": "ALL 7 gold mutants verified against paper text",
+      "details": {
+        "WT": "pG=88% confirmed (Page 2 text)",
+        "M290L": "I1=10%, I2=~35% confirmed (Page 9: 'from 6% each to 10 and ~35%')",
+        "L301I": "I2=65% confirmed (Page 9: 'ulation increasing to 65%')",
+        "M290L_L301I": "Active=8% confirmed (Page 9: 'decreases active state population to 8%')",
+        "F382L": "pA~88% confirmed (Page 9 text)",
+        "F382Y": "pI2~90% confirmed (Page 9: 'pI2 ~ 90%; Fig. 4E')",
+        "F382V": "I2>95% confirmed (Page 9: 'higher than 95% the I2 state'); F401V in Abl1b numbering"
+      },
+      "ddg_consistency": "All implied DDG within 0.9 kcal/mol of paper-reported energies"
+    }
+  }
+}

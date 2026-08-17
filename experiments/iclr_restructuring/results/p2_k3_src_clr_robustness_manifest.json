@@ -1,0 +1,15 @@
+{
+  "script": "p2_k3_src_clr_robustness.py",
+  "script_sha256": "9a19e45f3add0bee3c2e0bce3f632e56ab8a6159ad12b6764cbc197704d574ad",
+  "canonical_src_sha256": "d7012cf7464a39a192304c1525ac5bee2afa8425c127d3361e7cc88a6a7f4df5",
+  "output_sha256": "99adaad585ee8b2fb2f4aad2569e2ca41898115f4116650f6d3f42aa59d1b565",
+  "pseudocounts": [
+    1e-08,
+    1e-06,
+    0.0001,
+    0.001,
+    0.01
+  ],
+  "interval_realizations": 200,
+  "interval_seed": 20260811
+}

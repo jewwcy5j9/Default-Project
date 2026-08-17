@@ -1,0 +1,29 @@
+{
+  "name": "Prospective v3 single-primary frozen model manifest",
+  "version": "3.0.0",
+  "freeze_date": "2026-08-10",
+  "primary_entrypoint": "run_custodian_v3.py",
+  "feature_entrypoint": "prepare_esm2_features_v3.py",
+  "checkpoint": "facebook/esm2_t33_650M_UR50D",
+  "feature_definition": "For each mutant, compute full-sequence ESM-2 embeddings for WT and mutant; retain all per-residue differences; sum the difference vectors at explicit substituted sequence indices to obtain the intervention vector.",
+  "leakage_controls": [
+    "feature preparation receives no mutant-population targets",
+    "PCA is fit anew in each outer fold using only outer-training mutant residue rows",
+    "PCA fit IDs and parameter hash are emitted per fold",
+    "nested selection uses only inner folds within the corresponding outer-training set",
+    "primary comparator uses identical outer folds"
+  ],
+  "primary_hyperparameters": {
+    "K": 3,
+    "rank": 2,
+    "hidden_dim": 32,
+    "epochs": 800,
+    "optimizer": "Adam",
+    "learning_rate": 0.005,
+    "weight_decay": 0.0001,
+    "loss": "MSE",
+    "n_seeds": 5,
+    "seed_scheme": "s*100+outer_test_index"
+  },
+  "immutability": "Any change before first data contact requires a new numbered version and amendment record. Any change after data contact is a deviation and cannot replace v3 results."
+}

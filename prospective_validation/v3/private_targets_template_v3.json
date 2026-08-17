@@ -1,0 +1,6 @@
+{
+  "panel_id": "[MUST_MATCH_PUBLIC_INPUT]",
+  "mutant_populations": {
+    "[MUTATION_ID]": [0.0, 0.0, 0.0]
+  }
+}

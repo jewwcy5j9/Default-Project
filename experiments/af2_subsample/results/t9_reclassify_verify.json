@@ -1,0 +1,64 @@
+{
+  "region_frame": {
+    "frame": "2HYY/I1 numbering (canonical Abl1 residue numbering)",
+    "reference_region_offsets": {
+      "i1": 0,
+      "active": 19,
+      "i2": 19
+    }
+  },
+  "main_840": {
+    "reclassified": {
+      "active": 667,
+      "unclassified": 173
+    },
+    "compare_vs_stored": {
+      "n_new": 840,
+      "n_stored": 840,
+      "n_match": 840,
+      "n_diff": 0,
+      "n_missing_new": 0,
+      "n_extra_stored": 0,
+      "diffs": [],
+      "n_diffs_shown": 0
+    }
+  },
+  "b1_480_full_protein": {
+    "reclassified": {
+      "unclassified": 467,
+      "active": 13
+    },
+    "compare_vs_stored": {
+      "n_new": 480,
+      "n_stored": 480,
+      "n_match": 480,
+      "n_diff": 0,
+      "n_missing_new": 0,
+      "n_extra_stored": 0,
+      "diffs": [],
+      "n_diffs_shown": 0
+    }
+  },
+  "b1_region_sensitivity": {
+    "n_lobe_act": {
+      "region": "residues 235-400",
+      "counts": {
+        "unclassified": 444,
+        "active": 36
+      },
+      "i1i2_hits": 0
+    },
+    "alphaC_only": {
+      "region": "residues 260-300",
+      "counts": {
+        "active": 262,
+        "I1": 38,
+        "unclassified": 179,
+        "I2": 1
+      },
+      "i1i2_hits": 39
+    }
+  },
+  "full_protein_b1_i1i2": 0,
+  "runtime_seconds": 37.39848327636719
+}

@@ -1,0 +1,89 @@
+{
+  "rows": [
+    {
+      "mutant": "M290L",
+      "pop": [
+        0.55,
+        0.1,
+        0.35
+      ],
+      "ddg_implied": -1.0609473674761314,
+      "ddg_reported": -1.3,
+      "abs_diff": 0.23905263252386866
+    },
+    {
+      "mutant": "L301I",
+      "pop": [
+        0.25,
+        0.1,
+        0.65
+      ],
+      "ddg_implied": -1.8302866037372463,
+      "ddg_reported": -2.2,
+      "abs_diff": 0.3697133962627539
+    },
+    {
+      "mutant": "M290L_L301I",
+      "pop": [
+        0.08,
+        0.1,
+        0.82
+      ],
+      "ddg_implied": -2.6259468843623788,
+      "ddg_reported": -3.5,
+      "abs_diff": 0.8740531156376212
+    },
+    {
+      "mutant": "F382L",
+      "pop": [
+        0.88,
+        0.06,
+        0.06
+      ],
+      "ddg_implied": -0.0,
+      "ddg_reported": 0.0,
+      "abs_diff": 0.0
+    },
+    {
+      "mutant": "F382Y",
+      "pop": [
+        0.1,
+        0.0,
+        0.9
+      ],
+      "ddg_implied": -2.4808035037771394,
+      "ddg_reported": -2.5,
+      "abs_diff": 0.01919649622286057
+    },
+    {
+      "mutant": "F382V",
+      "pop": [
+        0.05,
+        0.0,
+        0.95
+      ],
+      "ddg_implied": -2.9232485786752607,
+      "ddg_reported": -3.0,
+      "abs_diff": 0.07675142132473933
+    }
+  ],
+  "summary": {
+    "n": 6,
+    "mean_abs_diff_all": 0.26312784366197395,
+    "max_abs_diff_all": 0.8740531156376212,
+    "mean_abs_diff_excl_F382L": 0.3157534123943687,
+    "max_abs_diff_excl_F382L": 0.8740531156376212,
+    "spearman_reported_vs_implied": 0.8999999999999998,
+    "pearson_reported_vs_implied": 0.9126461953008558,
+    "interpretation": "Reported Fig.4C energies are reproduced from the same populations to within the paper's own 0.9 kcal/mol consistency bar; independent-measurement status UNRESOLVED.",
+    "roundtrip_nonactive_mae": 0.04471809322245527,
+    "roundtrip_per_mutant": {
+      "M290L": 0.1005884364666193,
+      "L301I": 0.09851424365711947,
+      "M290L_L301I": 0.06051578193498819,
+      "F382L": 1.3877787807814457e-17,
+      "F382Y": 0.002880163466951302,
+      "F382V": 0.005809933809053369
+    }
+  }
+}

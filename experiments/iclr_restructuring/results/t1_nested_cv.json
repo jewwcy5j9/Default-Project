@@ -1,0 +1,58 @@
+{
+  "per_mutant": {
+    "M290L": 0.07062715341647464,
+    "L301I": 0.18423077066739402,
+    "M290L_L301I": 0.04080181593696278,
+    "F382L": 0.3579791977504889,
+    "F382Y": 0.3162931685646375,
+    "F382V": 0.6046410431464513
+  },
+  "selection": {
+    "M290L": {
+      "pos": 0.2762,
+      "LLR": 0.1778,
+      "Extended": 0.38
+    },
+    "L301I": {
+      "pos": 0.3367,
+      "LLR": 0.1829,
+      "Extended": 0.3419
+    },
+    "M290L_L301I": {
+      "pos": 0.2989,
+      "LLR": 0.226,
+      "Extended": 0.2587
+    },
+    "F382L": {
+      "pos": 0.1355,
+      "LLR": 0.1002,
+      "Extended": 0.2844
+    },
+    "F382Y": {
+      "pos": 0.3292,
+      "LLR": 0.2582,
+      "Extended": 0.2452
+    },
+    "F382V": {
+      "pos": 0.3147,
+      "LLR": 0.261,
+      "Extended": 0.1474
+    }
+  },
+  "chosen": {
+    "M290L": "LLR",
+    "L301I": "LLR",
+    "M290L_L301I": "LLR",
+    "F382L": "LLR",
+    "F382Y": "Extended",
+    "F382V": "Extended"
+  },
+  "nested_mae": 0.2624288582470682,
+  "protocol": "Nested LOO; each LLR scale is fit on its corresponding training fold only; candidates fixed to pos/LLR/Extended",
+  "reference": {
+    "LLR_fixed_mae": 0.1629,
+    "pos_fixed_mae": 0.2757,
+    "Extended_fixed_mae": 0.3003,
+    "training_mean": 0.2329
+  }
+}

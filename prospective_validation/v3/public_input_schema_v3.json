@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prospective v3 label-free public input",
+  "type": "object",
+  "required": ["protocol_version", "panel_id", "wild_type_sequence", "wt_population", "state_definitions", "conditions", "mutations"],
+  "properties": {
+    "protocol_version": {"const": "3.0.0"},
+    "panel_id": {"type": "string", "minLength": 1},
+    "system_name": {"type": "string"},
+    "wild_type_sequence": {"type": "string", "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$"},
+    "wt_population": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "minimum": 0, "maximum": 1}},
+    "state_definitions": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+    "conditions": {
+      "type": "object",
+      "required": ["construct", "ligand", "temperature", "buffer", "state_model"],
+      "additionalProperties": true
+    },
+    "uncertainty_metadata": {"type": "object"},
+    "mutations": {
+      "type": "array", "minItems": 5,
+      "items": {
+        "type": "object", "required": ["mutation_id", "substitutions"],
+        "properties": {
+          "mutation_id": {"type": "string", "minLength": 1},
+          "substitutions": {
+            "type": "array", "minItems": 1,
+            "items": {
+              "type": "object", "required": ["sequence_index_1based", "from", "to"],
+              "properties": {
+                "sequence_index_1based": {"type": "integer", "minimum": 1},
+                "reported_position": {"type": ["integer", "string"]},
+                "from": {"type": "string", "pattern": "^[ACDEFGHIKLMNPQRSTVWY]$"},
+                "to": {"type": "string", "pattern": "^[ACDEFGHIKLMNPQRSTVWY]$"}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

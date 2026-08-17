@@ -1,0 +1,193 @@
+{
+  "experiment": "esm2_masked_marginal_llr_proxy",
+  "description": "B2: masked-marginal LLR as ddG proxy; Abl1 validation + Src variant C",
+  "protocol": {
+    "esm2_model": "facebook/esm2_t33_650M_UR50D",
+    "model_source": "local models/esm2_650m",
+    "llr_protocol": "ESM-1v masked-marginal (Meier et al. 2021): mask target residue + random 15% of others, 20 reps averaged, per-position LLR = mean(log P(mut)) - mean(log P(wt))",
+    "double_mutant_handling": "sum of per-position LLR",
+    "cdst_protocol": "LowRankCDST(K=2, rank=2, hidden_dim=32), prob-space MSE, Adam(lr=5e-3, wd=1e-4), 800 epochs, 5 seeds, LOO-CV",
+    "foldx_available": false,
+    "honest_disclosure": "No FoldX output; all ddG proxies are ESM-2 zero-shot LLR scores"
+  },
+  "correlations": {
+    "abl1_llr_vs_experimental_ddg": {
+      "pearson_r": 0.5042672061257454,
+      "p_value": 0.30771308874550696,
+      "spearman_rho": 0.6,
+      "p_value_s": 0.208
+    },
+    "src_llr_vs_non_active": {
+      "pearson_r": 0.14052763036796437,
+      "p_value": 0.7399590689048283,
+      "spearman_rho": 0.13638618139749523,
+      "p_value_s": 0.7474293952265144
+    }
+  },
+  "abl1": {
+    "llr": {
+      "M290L": -3.97456095428206,
+      "L301I": -3.2415222167968754,
+      "M290L_L301I": -7.216083171078935,
+      "F382L": -5.67580589974532,
+      "F382Y": -8.264529869204852,
+      "F382V": -9.53644492352614
+    },
+    "llr_norm_const": 9.53644492352614,
+    "experimental_ddg": {
+      "M290L": -1.3,
+      "L301I": -2.2,
+      "M290L_L301I": -3.5,
+      "F382L": 0.0,
+      "F382Y": -2.5,
+      "F382V": -3.0
+    },
+    "variant_c_llr_proxy": {
+      "mae": 0.15121656221648055,
+      "direction": "5/5",
+      "per_mutant": {
+        "M290L": 0.5331321574747563,
+        "L301I": 0.9288993835449219,
+        "M290L_L301I": 0.8257870435714721,
+        "F382L": 0.654591953754425,
+        "F382Y": 0.9048495292663574,
+        "F382V": 0.938386607170105
+      },
+      "errors": {
+        "M290L": 0.08313215747475627,
+        "L301I": 0.17889938354492185,
+        "M290L_L301I": 0.0942129564285279,
+        "F382L": 0.534591953754425,
+        "F382Y": 0.0048495292663574,
+        "F382V": 0.01161339282989493
+      },
+      "direction_detail": {
+        "M290L": "OK",
+        "L301I": "OK",
+        "M290L_L301I": "OK",
+        "F382L": "TIE",
+        "F382Y": "OK",
+        "F382V": "OK"
+      }
+    },
+    "variant_c_experimental_ddg": {
+      "mae": 0.10455223371585208,
+      "direction": "5/5",
+      "per_mutant": {
+        "M290L": 0.5983664184808731,
+        "L301I": 0.8396076679229736,
+        "M290L_L301I": 0.8867192149162293,
+        "F382L": 0.4145889163017273,
+        "F382Y": 0.9321681022644043,
+        "F382V": 0.9206984877586365
+      },
+      "errors": {
+        "M290L": 0.14836641848087312,
+        "L301I": 0.08960766792297359,
+        "M290L_L301I": 0.03328078508377075,
+        "F382L": 0.2945889163017273,
+        "F382Y": 0.03216810226440425,
+        "F382V": 0.02930151224136346
+      },
+      "direction_detail": {
+        "M290L": "OK",
+        "L301I": "OK",
+        "M290L_L301I": "OK",
+        "F382L": "TIE",
+        "F382Y": "OK",
+        "F382V": "OK"
+      }
+    },
+    "baselines": {
+      "variant_C_exp_ddg": 0.1046,
+      "Extended_10dim": 0.4134
+    }
+  },
+  "src": {
+    "llr": {
+      "SrcKD-L410A": -10.260746944695711,
+      "SrcKD-V332I": -2.7498181045055388,
+      "SrcKD-L270F_V332I": -6.684472243487834,
+      "SrcKD-L325A": -7.632061479985714,
+      "SrcKD-A311I": -5.289704984426499,
+      "SrcKD-V380A": -4.5194466590881355,
+      "SrcKD-V331A": -6.06458607390523,
+      "SrcKD-F405A": -10.206619560625404
+    },
+    "llr_norm_const": 10.260746944695711,
+    "variant_c_llr_proxy": {
+      "mae": 0.2526986740529537,
+      "direction": "6/7",
+      "per_mutant": {
+        "SrcKD-L410A": 0.9900422096252441,
+        "SrcKD-V332I": 0.9942977428436279,
+        "SrcKD-L270F_V332I": 0.9989348411560058,
+        "SrcKD-L325A": 0.9964258432388305,
+        "SrcKD-A311I": 0.9966041445732117,
+        "SrcKD-V380A": 0.9966727018356323,
+        "SrcKD-V331A": 0.9975652575492859,
+        "SrcKD-F405A": 0.27441745400428774
+      },
+      "errors": {
+        "SrcKD-L410A": 0.7200422096252441,
+        "SrcKD-V332I": 0.4742977428436279,
+        "SrcKD-L270F_V332I": 0.0889348411560058,
+        "SrcKD-L325A": 0.003574156761169456,
+        "SrcKD-A311I": 0.00339585542678833,
+        "SrcKD-V380A": 0.00332729816436772,
+        "SrcKD-V331A": 0.002434742450714067,
+        "SrcKD-F405A": 0.7255825459957123
+      },
+      "direction_detail": {
+        "SrcKD-L410A": "TIE",
+        "SrcKD-V332I": "OK",
+        "SrcKD-L270F_V332I": "OK",
+        "SrcKD-L325A": "OK",
+        "SrcKD-A311I": "OK",
+        "SrcKD-V380A": "OK",
+        "SrcKD-V331A": "OK",
+        "SrcKD-F405A": "WRONG"
+      }
+    },
+    "pos_markers_4dim": {
+      "mae": 0.2507850132882595,
+      "direction": "7/7",
+      "per_mutant": {
+        "SrcKD-L410A": 0.9899494528770447,
+        "SrcKD-V332I": 0.9924213647842407,
+        "SrcKD-L270F_V332I": 0.9921334505081176,
+        "SrcKD-L325A": 0.998592209815979,
+        "SrcKD-A311I": 0.9983659863471985,
+        "SrcKD-V380A": 0.9946422219276428,
+        "SrcKD-V331A": 0.9922728896141052,
+        "SrcKD-F405A": 0.2843508541584015
+      },
+      "errors": {
+        "SrcKD-L410A": 0.7199494528770447,
+        "SrcKD-V332I": 0.4724213647842407,
+        "SrcKD-L270F_V332I": 0.0821334505081176,
+        "SrcKD-L325A": 0.0014077901840210405,
+        "SrcKD-A311I": 0.0016340136528014693,
+        "SrcKD-V380A": 0.0053577780723571555,
+        "SrcKD-V331A": 0.007727110385894798,
+        "SrcKD-F405A": 0.7156491458415986
+      },
+      "direction_detail": {
+        "SrcKD-L410A": "TIE",
+        "SrcKD-V332I": "OK",
+        "SrcKD-L270F_V332I": "OK",
+        "SrcKD-L325A": "OK",
+        "SrcKD-A311I": "OK",
+        "SrcKD-V380A": "OK",
+        "SrcKD-V331A": "OK",
+        "SrcKD-F405A": "OK"
+      }
+    },
+    "baselines": {
+      "pos_markers_4dim": 0.2508,
+      "Extended_10dim": 0.4443,
+      "old_wt_marginal_llr_variant_c": 0.332
+    }
+  },
+  "timestamp": "2026-07-31 17:56:55"
+}

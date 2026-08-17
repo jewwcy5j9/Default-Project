@@ -1,0 +1,53 @@
+{
+  "script": "p2_k3_src_label_sensitivity.py",
+  "version": "1.0.0",
+  "date": "2026-08-11 18:35:50",
+  "script_sha256": "08b35c667ce42ffc5db95e8664726839a85461624cd90911955b3421bcca6fdc",
+  "params": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "epochs": 800,
+    "pca_dim": 20,
+    "candidates": [
+      "pos",
+      "ext",
+      "llr_pos",
+      "llr_only",
+      "pca20"
+    ],
+    "models": [
+      "CLR-Ridge",
+      "CLR-GP",
+      "LowRankCDST"
+    ],
+    "gp_protocol": {
+      "id": "GP-primary-0.05-v1",
+      "kernel": "1.0 * RBF(length_scale=1.0) + WhiteKernel(noise_level=0.05)",
+      "alpha": 0.0001,
+      "normalize_y": true,
+      "n_restarts_optimizer": 1,
+      "random_state": 0,
+      "clr_clip": 1e-06,
+      "feature_scaling": "training-fold StandardScaler"
+    },
+    "label_protocol_ids": [
+      "src_k3_figs5_met305_primary_v1",
+      "src_k3_figs5_met305_with_table_s2_l410a_substitution_v1"
+    ]
+  },
+  "inputs": {
+    "src_k3_canonical.csv": "d7012cf7464a39a192304c1525ac5bee2afa8425c127d3361e7cc88a6a7f4df5",
+    "p2_k3_nested_pca.py": "2e8ab566860c3caebf0bd3cc1bed77d955f7f95ac01b8a6ca417fe7447999641",
+    "k3_data.py": "d20632768039de80a9bf5451536d83e9ed2d83a01eb55b21f8d3f537616bb8bd",
+    "esm2_encoding.py": "8e9431b9c3ae7abb4b3d77ec844b462f3815a440b32dda9f4b4b44bdc65a5443",
+    "src_k3_l410a_sensitivity.json": "200cb7d59e2bab438d97778c4f2b79fca8c88624bdb5e8b84b4549cb25bb76d0"
+  },
+  "outputs": [
+    "p2_k3_src_label_sensitivity.json"
+  ]
+}

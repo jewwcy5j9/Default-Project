@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prospective v3 custodian-private targets",
+  "type": "object",
+  "required": ["panel_id", "mutant_populations"],
+  "properties": {
+    "panel_id": {"type": "string"},
+    "mutant_populations": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {
+        "type": "array", "minItems": 3, "maxItems": 3,
+        "items": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    }
+  },
+  "additionalProperties": false
+}

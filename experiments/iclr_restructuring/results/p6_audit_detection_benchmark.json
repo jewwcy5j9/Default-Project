@@ -1,0 +1,2385 @@
+{
+  "experiment": "P6 audit detection benchmark (A1)",
+  "date": "2026-08-14",
+  "inputs": [
+    "p4_support_resolution_selection.json",
+    "p5_candidate_heterogeneity.json"
+  ],
+  "cross_check": {
+    "repeats_verified": 12000,
+    "mismatches": 0
+  },
+  "detectors": {
+    "S1": "raw_pair_separation < tau and pair disagreement > theta",
+    "S2": "exact C(n,2) permutation p < 0.05, conditional on S1(tau,theta)",
+    "R": "fine_contrast_clr_mae > margin * shared_contrast_clr_mae",
+    "T": "selection_optimism > tau_sel"
+  },
+  "sweeps": {
+    "tau": [
+      0.001,
+      0.01,
+      0.05,
+      0.1,
+      0.25
+    ],
+    "theta": [
+      0.05,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "margin": [
+      1.7320508075688772,
+      1.5,
+      2.0,
+      3.0
+    ],
+    "tau_sel": [
+      0.0,
+      0.01,
+      0.02,
+      0.05
+    ]
+  },
+  "S1": [
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.05,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.1,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.2,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.1,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.2,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.001,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.1,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.2,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.01,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.2,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.1,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.2,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.1,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.1,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.2,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.25,
+      "theta": 0.4,
+      "detection_rate": 0.0
+    }
+  ],
+  "S2": [
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.475333
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.324333
+    },
+    {
+      "n": 6,
+      "epsilon": 0.05,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 6,
+      "epsilon": 0.05,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.487333
+    },
+    {
+      "n": 6,
+      "epsilon": 0.05,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.308333
+    },
+    {
+      "n": 6,
+      "epsilon": 0.2,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 6,
+      "epsilon": 0.2,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 6,
+      "epsilon": 0.2,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 6,
+      "epsilon": 1.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 6,
+      "epsilon": 1.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 6,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.015,
+      "mean_p": 0.499464
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.085,
+      "mean_p": 0.296786
+    },
+    {
+      "n": 8,
+      "epsilon": 0.05,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 8,
+      "epsilon": 0.05,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.005,
+      "mean_p": 0.494286
+    },
+    {
+      "n": 8,
+      "epsilon": 0.05,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.11,
+      "mean_p": 0.285179
+    },
+    {
+      "n": 8,
+      "epsilon": 0.2,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 8,
+      "epsilon": 0.2,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 8,
+      "epsilon": 0.2,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 8,
+      "epsilon": 1.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 8,
+      "epsilon": 1.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 8,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 12,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 12,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.01,
+      "mean_p": 0.485076
+    },
+    {
+      "n": 12,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.015,
+      "mean_p": 0.293864
+    },
+    {
+      "n": 12,
+      "epsilon": 0.05,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 12,
+      "epsilon": 0.05,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.489621
+    },
+    {
+      "n": 12,
+      "epsilon": 0.05,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.04,
+      "mean_p": 0.280379
+    },
+    {
+      "n": 12,
+      "epsilon": 0.2,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 12,
+      "epsilon": 0.2,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 12,
+      "epsilon": 0.2,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 12,
+      "epsilon": 1.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 12,
+      "epsilon": 1.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 12,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.506789
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.283026
+    },
+    {
+      "n": 20,
+      "epsilon": 0.05,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 20,
+      "epsilon": 0.05,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.494763
+    },
+    {
+      "n": 20,
+      "epsilon": 0.05,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.273237
+    },
+    {
+      "n": 20,
+      "epsilon": 0.2,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 20,
+      "epsilon": 0.2,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 20,
+      "epsilon": 0.2,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 20,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.50882
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.275829
+    },
+    {
+      "n": 50,
+      "epsilon": 0.05,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 50,
+      "epsilon": 0.05,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.501971
+    },
+    {
+      "n": 50,
+      "epsilon": 0.05,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 200,
+      "detection_rate": 0.0,
+      "mean_p": 0.261078
+    },
+    {
+      "n": 50,
+      "epsilon": 0.2,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 50,
+      "epsilon": 0.2,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 50,
+      "epsilon": 0.2,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 50,
+      "epsilon": 1.0,
+      "delta": 0.0,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 50,
+      "epsilon": 1.0,
+      "delta": 0.6,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    },
+    {
+      "n": 50,
+      "epsilon": 1.0,
+      "delta": 1.2,
+      "tau": 0.05,
+      "theta": 0.1,
+      "n_flagged": 0,
+      "detection_rate": null,
+      "mean_p": null
+    }
+  ],
+  "R": [
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 1.5,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 2.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 3.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.93
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 1.5,
+      "detection_rate": 0.995
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 2.0,
+      "detection_rate": 0.775
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 3.0,
+      "detection_rate": 0.28
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 1.7320508075688772,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 1.5,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 2.0,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 6,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 3.0,
+      "detection_rate": 0.94
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 1.5,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 2.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 3.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.77
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 1.5,
+      "detection_rate": 0.95
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 2.0,
+      "detection_rate": 0.47
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 3.0,
+      "detection_rate": 0.09
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 1.7320508075688772,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 1.5,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 2.0,
+      "detection_rate": 1.0
+    },
+    {
+      "n": 8,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 3.0,
+      "detection_rate": 0.71
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 1.5,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 2.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 3.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 1.5,
+      "detection_rate": 0.01
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 2.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 3.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.525
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 1.5,
+      "detection_rate": 0.935
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 2.0,
+      "detection_rate": 0.16
+    },
+    {
+      "n": 20,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 3.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 1.5,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 2.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.0,
+      "margin": 3.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 1.5,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 2.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 0.6,
+      "margin": 3.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 1.7320508075688772,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 1.5,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 2.0,
+      "detection_rate": 0.0
+    },
+    {
+      "n": 50,
+      "epsilon": 0.0,
+      "delta": 1.2,
+      "margin": 3.0,
+      "detection_rate": 0.0
+    }
+  ],
+  "T": [
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 1,
+      "tau_sel": 0.0,
+      "detection_rate": 0.329167
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 1,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 1,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 1,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 5,
+      "tau_sel": 0.0,
+      "detection_rate": 0.439583
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 5,
+      "tau_sel": 0.01,
+      "detection_rate": 0.13875
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 5,
+      "tau_sel": 0.02,
+      "detection_rate": 0.106667
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 5,
+      "tau_sel": 0.05,
+      "detection_rate": 0.029167
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 20,
+      "tau_sel": 0.0,
+      "detection_rate": 0.615
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 20,
+      "tau_sel": 0.01,
+      "detection_rate": 0.372083
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 20,
+      "tau_sel": 0.02,
+      "detection_rate": 0.303333
+    },
+    {
+      "source": "P4",
+      "n": 6,
+      "mechanism": 20,
+      "tau_sel": 0.05,
+      "detection_rate": 0.103333
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 1,
+      "tau_sel": 0.0,
+      "detection_rate": 0.3375
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 1,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 1,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 1,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 5,
+      "tau_sel": 0.0,
+      "detection_rate": 0.35
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 5,
+      "tau_sel": 0.01,
+      "detection_rate": 0.009583
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 5,
+      "tau_sel": 0.02,
+      "detection_rate": 0.005833
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 5,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 20,
+      "tau_sel": 0.0,
+      "detection_rate": 0.370417
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 20,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0325
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 20,
+      "tau_sel": 0.02,
+      "detection_rate": 0.020417
+    },
+    {
+      "source": "P4",
+      "n": 8,
+      "mechanism": 20,
+      "tau_sel": 0.05,
+      "detection_rate": 0.000417
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 1,
+      "tau_sel": 0.0,
+      "detection_rate": 0.384167
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 1,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 1,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 1,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 5,
+      "tau_sel": 0.0,
+      "detection_rate": 0.384583
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 5,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 5,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 5,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 20,
+      "tau_sel": 0.0,
+      "detection_rate": 0.384583
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 20,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 20,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 12,
+      "mechanism": 20,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 1,
+      "tau_sel": 0.0,
+      "detection_rate": 0.40125
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 1,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 1,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 1,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 5,
+      "tau_sel": 0.0,
+      "detection_rate": 0.40125
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 5,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 5,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 5,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 20,
+      "tau_sel": 0.0,
+      "detection_rate": 0.40125
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 20,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 20,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 20,
+      "mechanism": 20,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 1,
+      "tau_sel": 0.0,
+      "detection_rate": 0.409583
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 1,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 1,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 1,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 5,
+      "tau_sel": 0.0,
+      "detection_rate": 0.409583
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 5,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 5,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 5,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 20,
+      "tau_sel": 0.0,
+      "detection_rate": 0.409583
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 20,
+      "tau_sel": 0.01,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 20,
+      "tau_sel": 0.02,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P4",
+      "n": 50,
+      "mechanism": 20,
+      "tau_sel": 0.05,
+      "detection_rate": 0.0
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.15,
+      "tau_sel": 0.0,
+      "detection_rate": 0.912
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.15,
+      "tau_sel": 0.01,
+      "detection_rate": 0.816
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.15,
+      "tau_sel": 0.02,
+      "detection_rate": 0.72
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.15,
+      "tau_sel": 0.05,
+      "detection_rate": 0.334
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.15,
+      "tau_sel": 0.0,
+      "detection_rate": 0.788
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.15,
+      "tau_sel": 0.01,
+      "detection_rate": 0.662
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.15,
+      "tau_sel": 0.02,
+      "detection_rate": 0.548
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.15,
+      "tau_sel": 0.05,
+      "detection_rate": 0.148
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.15,
+      "tau_sel": 0.0,
+      "detection_rate": 0.494
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.15,
+      "tau_sel": 0.01,
+      "detection_rate": 0.22
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.15,
+      "tau_sel": 0.02,
+      "detection_rate": 0.146
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.15,
+      "tau_sel": 0.05,
+      "detection_rate": 0.008
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.05,
+      "tau_sel": 0.0,
+      "detection_rate": 0.878
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.05,
+      "tau_sel": 0.01,
+      "detection_rate": 0.776
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.05,
+      "tau_sel": 0.02,
+      "detection_rate": 0.63
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.05,
+      "tau_sel": 0.05,
+      "detection_rate": 0.246
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.05,
+      "tau_sel": 0.0,
+      "detection_rate": 0.802
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.05,
+      "tau_sel": 0.01,
+      "detection_rate": 0.7
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.05,
+      "tau_sel": 0.02,
+      "detection_rate": 0.57
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.05,
+      "tau_sel": 0.05,
+      "detection_rate": 0.172
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.05,
+      "tau_sel": 0.0,
+      "detection_rate": 0.656
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.05,
+      "tau_sel": 0.01,
+      "detection_rate": 0.438
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.05,
+      "tau_sel": 0.02,
+      "detection_rate": 0.298
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.05,
+      "tau_sel": 0.05,
+      "detection_rate": 0.04
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.02,
+      "tau_sel": 0.0,
+      "detection_rate": 0.894
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.02,
+      "tau_sel": 0.01,
+      "detection_rate": 0.78
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.02,
+      "tau_sel": 0.02,
+      "detection_rate": 0.636
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.02,
+      "tau_sel": 0.05,
+      "detection_rate": 0.21
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.02,
+      "tau_sel": 0.0,
+      "detection_rate": 0.81
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.02,
+      "tau_sel": 0.01,
+      "detection_rate": 0.688
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.02,
+      "tau_sel": 0.02,
+      "detection_rate": 0.548
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.02,
+      "tau_sel": 0.05,
+      "detection_rate": 0.124
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.02,
+      "tau_sel": 0.0,
+      "detection_rate": 0.736
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.02,
+      "tau_sel": 0.01,
+      "detection_rate": 0.562
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.02,
+      "tau_sel": 0.02,
+      "detection_rate": 0.382
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.02,
+      "tau_sel": 0.05,
+      "detection_rate": 0.042
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.01,
+      "tau_sel": 0.0,
+      "detection_rate": 0.868
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.01,
+      "tau_sel": 0.01,
+      "detection_rate": 0.732
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.01,
+      "tau_sel": 0.02,
+      "detection_rate": 0.602
+    },
+    {
+      "source": "P5",
+      "n": 6,
+      "mechanism": 0.01,
+      "tau_sel": 0.05,
+      "detection_rate": 0.17
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.01,
+      "tau_sel": 0.0,
+      "detection_rate": 0.828
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.01,
+      "tau_sel": 0.01,
+      "detection_rate": 0.718
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.01,
+      "tau_sel": 0.02,
+      "detection_rate": 0.53
+    },
+    {
+      "source": "P5",
+      "n": 8,
+      "mechanism": 0.01,
+      "tau_sel": 0.05,
+      "detection_rate": 0.106
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.01,
+      "tau_sel": 0.0,
+      "detection_rate": 0.72
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.01,
+      "tau_sel": 0.01,
+      "detection_rate": 0.508
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.01,
+      "tau_sel": 0.02,
+      "detection_rate": 0.35
+    },
+    {
+      "source": "P5",
+      "n": 20,
+      "mechanism": 0.01,
+      "tau_sel": 0.05,
+      "detection_rate": 0.044
+    }
+  ]
+}
