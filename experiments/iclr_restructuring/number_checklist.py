@@ -868,8 +868,13 @@ ok("AF2 reference geometry and ambiguity values",
        ["ambiguity_at_frozen_threshold"]["counts"]["ambiguous"] == 0
    and af2_protocols["fresh_msa"]["regions"]["n_lobe_act"]
        ["ambiguity_at_frozen_threshold"]["counts"]["ambiguous"] == 0
+   and af2_protocols["original"]["regions"]["alphaC_only"]
+       ["ambiguity_at_frozen_threshold"]["counts"]["ambiguous"] == 801
+   and af2_protocols["fresh_msa"]["regions"]["alphaC_only"]
+       ["ambiguity_at_frozen_threshold"]["counts"]["ambiguous"] == 298
    and all(token in tex_ms for token in (
-       "$8.89$", "$7.33$", "$2.56$", "$451/840$", "$39/480$", "$1.57$")))
+       "$8.89$", "$7.33$", "$2.56$", "$451/840$", "$39/480$", "$1.57$",
+       "$801/840$", "$298/480$")))
 
 af2_align = json.loads((ROOT / "experiments" / "af2_subsample" / "results"
                         / "af2_alignment_mode_audit.json").read_text(encoding="utf-8"))
